@@ -1,9 +1,9 @@
 # Squish Mental Journal
 This app is a journal for the ones with the busiest hectic lives. It was made as a tool to decompress and spill your thoughts into a journal daily. It includes login/sign up and stores your entries in a database.
 
-**Link to project:** http://recruiters-love-seeing-live-demos.com/
+**Link to project: Coming Soon** 
 
-
+![alt tag](https://i.ibb.co/Ctd4cq8/Untitled.png)
 
 ## How It's Made:
 
