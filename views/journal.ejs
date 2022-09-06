@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squish</title>
+
+    <!-- LINKS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Scripts -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/js/menu.js"></script>
+
+</head>
+<body>
+  
+
+  <!-- HAMBURGER MENU -->
+
+  <div class="menu-container">
+        
+    <div class="menu-wrapper">    
+       <div id="hamburger-menu">   
+            <span></span>
+            <span></span>
+            <span></span>   
+        </div>    
+       <!-- hamburger-menu -->    
+    </div>   
+    <!-- menu-wrapper -->
+
+    <ul class="menu-list accordion">    
+       <li class="accordion-toggle nav1">     
+          <a class="menu-link" href="/">Home</a>   
+       </li>          
+       <li class="accordion-toggle nav2">               
+          <a class="menu-link" href="/dashboard">Dashboard</a>    
+       </li>     
+        <li class="toggle accordion-toggle nav3">   
+          <a class="menu-link" href="/journal">Journal</a>  
+        </li>     
+        <li class="toggle accordion-toggle nav4">    
+          <a class="menu-link" href="/logout">Logout</a>             
+       </li>     
+       <!-- <li class="toggle accordion-toggle nav5">    
+         <a class="menu-link" href="#">Logout</a>             
+      </li>      -->
+    </ul>
+ 
+ </div>
+
+  <!-- <input type="checkbox" id="navi-toggle" class="checkbox" />
+  <label for="navi-toggle" class="button">
+    <span class="icon">&nbsp;</span>
+  </label>
+  <div class="background">&nbsp;</div>
+
+  <div class="menu">
+    <div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Entry</a></li>
+      </ul>
+    </div>
+  </div> -->
+
+  <div class="formPage">
+  
+  
+    <!--ICON-->
+      <div class="entryIcon">
+        <img src="/images/Default.png" alt="squish-icon">
+      </div>
+      
+
+    <!--ENTRY FORM-->
+    <div class="container journalForm">
+
+      <section class="titlebar">
+
+          <h1 class="entryTitle">Journal Entry</h1>
+
+          <div class="emoji">
+
+            <iconify-icon icon="fa6-regular:face-smile"></iconify-icon>
+            <iconify-icon icon="fa6-regular:face-meh"></iconify-icon>
+            <iconify-icon icon="fa6-regular:face-rolling-eyes"></iconify-icon>
+            <iconify-icon icon="fa6-regular:face-angry"></iconify-icon>
+            <iconify-icon icon="fa6-regular:face-frown"></iconify-icon>
+
+          </div>
+
+      </section>
+
+      <section class="journalInputs">
+          
+          <form action="/journal" class="entry" autocomplete="off" method="POST">
+
+            <label for="date">
+
+              Date:
+              <input type="date" name="dateItem" id="date" class="formInputs">
+
+            </label>
+
+            <label for="title">
+              
+              Title: 
+              <input type="text" name="titleItem" placeholder="(what sticks out from today?)" id="title" class="formInputs" size="30">
+
+            </label>
+
+              <div>
+                  <textarea name="entryItem" id="entry" required rows="10" cols="200"></textarea>
+              </div>
+              
+              </textarea>
+
+              <input type="submit" value="Submit" class="submit">
+
+          </form>
+
+      </section>
+    </div>
+
+  </div>
+  
+</body>
+</html>
