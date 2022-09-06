@@ -3,7 +3,7 @@ This app is a journal for the ones with the busiest hectic lives. It was made as
 
 **Link to project:** http://recruiters-love-seeing-live-demos.com/
 
-![alt tag](https://i.ibb.co/Ctd4cq8/Untitled.png)
+
 
 ## How It's Made:
 
