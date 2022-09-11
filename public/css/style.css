@@ -547,7 +547,14 @@ DASHBOARD
      padding: 1rem;
      color: white;
      font-size: 1.4rem;
-     border-bottom: 5px solid rgba(0, 0, 0, 1);
+     border-bottom: .4rem solid rgba(0, 0, 0, .5);
+}
+
+.noteTitle h3 {
+     width: 14rem;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
 }
 
 .noteText {
