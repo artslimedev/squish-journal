@@ -13,10 +13,11 @@ module.exports = {
     createEntry: async (req, res)=>{
         try{
             await Entry.create({
-                entry: req.body.entryItem, 
                 userId: req.user.id,
+                date: req.body.dateItem,  
+                mood: req.body.moodItem,
                 title: req.body.titleItem,
-                date: req.body.dateItem           
+                entry: req.body.entryItem       
             })
 
             console.log('Entry has been added!')

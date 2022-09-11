@@ -89,21 +89,55 @@
 
           <h1 class="entryTitle">Journal Entry</h1>
 
-          <div class="emoji">
+          <div class="journalEmoji">
 
-            <iconify-icon icon="fa6-regular:face-smile"></iconify-icon>
-            <iconify-icon icon="fa6-regular:face-meh"></iconify-icon>
-            <iconify-icon icon="fa6-regular:face-rolling-eyes"></iconify-icon>
-            <iconify-icon icon="fa6-regular:face-angry"></iconify-icon>
-            <iconify-icon icon="fa6-regular:face-frown"></iconify-icon>
-
-          </div>
+            <div class="emojiContainer">
+                    <label for="happy" class="emojiLabel">
+                        <input type="radio" name="moodItem" id="happy" value="happy" class="emojiInput" form="journalEntry">
+                        <iconify-icon icon="fa6-regular:face-smile" class="emojiFace"></iconify-icon>
+                    </label>
+                 
+            </div>
+    
+            <div class="emojiContainer">
+                    <label for="meh" class="emojiLabel">
+                        <input type="radio" name="moodItem" id="meh" value="meh" class="emojiInput" form="journalEntry">
+                        <iconify-icon icon="fa6-regular:face-meh" class="emojiFace"></iconify-icon>
+                    </label>
+                 
+            </div>
+    
+            <div class="emojiContainer">
+                    <label for="annoyed" class="emojiLabel">
+                        <input type="radio" name="moodItem" id="annoyed" value="annoyed" class="emojiInput" form="journalEntry">
+                        <iconify-icon icon="fa6-regular:face-rolling-eyes" class="emojiFace"></iconify-icon>
+                    </label>
+                 
+            </div>
+    
+            <div class="emojiContainer">
+                    <label for="angry" class="emojiLabel">
+                        <input type="radio" name="moodItem" id="angry" value="angry" class="emojiInput" form="journalEntry">
+                        <iconify-icon icon="fa6-regular:face-angry" class="emojiFace"></iconify-icon>
+                    </label>
+                 
+            </div>
+            
+            <div class="emojiContainer">
+                    <label for="sad" class="emojiLabel">
+                        <input type="radio" name="moodItem" id="sad" value="sad" class="emojiInput" form="journalEntry">
+                        <iconify-icon icon="fa6-regular:face-frown" class="emojiFace"></iconify-icon>
+                    </label>
+                 
+            </div>
+            
+        </div>
 
       </section>
 
       <section class="journalInputs">
           
-          <form action="/journal" class="entry" autocomplete="off" method="POST">
+          <form action="/journal" class="entry" autocomplete="off" method="POST" id="journalEntry">
 
             <label for="date">
 

@@ -1,17 +1,22 @@
 const mongoose = require('mongoose')
 
 const EntrySchema = new mongoose.Schema({
-  entry: {
-    type: String,
-    required: true,
-  },
   title: {
     type: String,
     required: false,
   },
+  entry: {
+    type: String,
+    required: true,
+  },
+  mood: {
+    type: String,
+    required: true,
+  },
   date: {
     type: String,
     required: true,
+    default: Date.now,
   },
   userId: {
     type: String,

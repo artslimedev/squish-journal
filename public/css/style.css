@@ -34,6 +34,7 @@ html, body {
 
 body {
      background-image: linear-gradient(to bottom right,#A88BEB,#512aa9);
+     background-color: transparent;
      /* background-image:linear-gradient(to right bottom, rgb(50, 21, 119), rgb(68, 36, 142)) */
      /* #321577, #44248E */
      background-size: 100%;
@@ -513,12 +514,16 @@ DASHBOARD
      font-size: 2.5rem;
      display: flex;
      align-items: center;
+     justify-content: center;
  }
-.dashEmoji {
-     margin-left: .5rem;
-     height: fit-content;
 
-}
+ .dashEmoji {
+     display: flex;
+     justify-content:flex-end;
+     align-items: center;
+     height: fit-content;
+     margin-right: 1rem;
+ }
 
 .note {
      font-size: 1rem;
@@ -527,7 +532,7 @@ DASHBOARD
      height: 15rem;
      margin-right: 2rem;
      margin-bottom: 2rem;
-     background-color: rgba(173, 144, 240, .5);
+     background-color: rgba(173, 144, 240, .3);
      /* background-color: #ad90f0; */
      box-shadow: .4rem .4rem .4rem .1rem rgba(0, 0, 0, 0.2);
      border-radius: 0 0 2rem 2rem;
@@ -538,11 +543,11 @@ DASHBOARD
      align-items: center;
      width: 100%;
      height: 3rem;
-     background-color: #401f8ec6;
+     background-color: rgba(97, 75, 162, .8);
      padding: 1rem;
      color: white;
      font-size: 1.4rem;
-     border-bottom: 5px solid black;
+     border-bottom: 5px solid rgba(0, 0, 0, 1);
 }
 
 .noteText {
@@ -560,7 +565,7 @@ DASHBOARD
      display: flex;
      justify-content: center;
      align-items: center;
-     flex-direction: column;
+     flex-wrap: wrap;
  }
  .dash-row {
      display: flex;
@@ -636,6 +641,11 @@ label {
      font-size: 1.3rem;
 }
 
+.emojiLabel {
+     font-size: 3rem;
+     color: rgba(110, 92, 157, 1);
+}
+
 .titlebar {
      margin-bottom: 20px;
      display: flex;
@@ -678,24 +688,42 @@ textarea {
      resize: none;
 }
 
-.emoji {
+.journalEmoji {
      display: flex;
      justify-content:flex-end;
-}
-
-.emoji iconify-icon {
-     font-size: 3rem;
+     align-items: center;
+ }
+ 
+ .emojiContainer {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 0.5rem;
+     align-self: center;
+     justify-self: center;
+ }
+ 
+ .emojiContainer input {
+     display: none;
+ }
+ 
+ .emoji iconify-icon {
+     font-size: 5rem;
      margin: 0 10px;
      color: rgba(110, 92, 157, 1);
      padding: 5px;
-}
-
-.emoji iconify-icon:hover {
+ }
+ 
+ .emojiInput:hover + .emojiFace {
      color: black;
      background-image: linear-gradient(to bottom right,#A88BEB,#512aa9);
-     /* background-color: rgba(110, 92, 157, 1); */
-     border-radius: 50px;
-}
+     border-radius: 50%;
+ }
+ .emojiInput:checked + .emojiFace {
+     color: black;
+     background-image: linear-gradient(to bottom right,#A88BEB,#512aa9);
+     border-radius: 50%;
+ }
 
 .titlebar {
      display: flex;
