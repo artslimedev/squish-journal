@@ -10,6 +10,7 @@ const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const dashboardRoutes = require('./routes/dashboard')
 const entryRoutes = require('./routes/journal')
+const PORT = 6969
 
 require('dotenv').config({path: './config/.env'})
 
@@ -47,6 +48,6 @@ app.use('/dashboard', dashboardRoutes)
 
 
  
-app.listen(process.env.PORT || 6969, () => {
-  console.log(`Server is running on port ${PORT}`)
+app.listen(process.env.PORT || PORT, () => {
+    console.log(`Server is running on port ${PORT}`)
 })    
