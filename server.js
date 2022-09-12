@@ -10,7 +10,6 @@ const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const dashboardRoutes = require('./routes/dashboard')
 const entryRoutes = require('./routes/journal')
-const PORT = 6969
 
 require('dotenv').config({path: './config/.env'})
 
