@@ -47,6 +47,6 @@ app.use('/dashboard', dashboardRoutes)
 
 
  
-app.listen(process.env.PORT || PORT, () => {
+app.listen(process.env.PORT || 6969, () => {
   console.log(`Server is running on port ${PORT}`)
 })    
