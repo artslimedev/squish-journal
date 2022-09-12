@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const PORT = 6969;
 const mongoose = require('mongoose')
 const passport = require('passport')
 const session = require('express-session')
@@ -48,5 +49,5 @@ app.use('/dashboard', dashboardRoutes)
 
  
 app.listen(process.env.PORT || PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
-})    
+  console.log(`Server is running on port ${PORT}`)
+})   
