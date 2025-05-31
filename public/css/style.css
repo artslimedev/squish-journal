@@ -37,12 +37,10 @@ body {
   min-height: 100vh;
   background-image: linear-gradient(to bottom right, #a88beb, #512aa9);
   background-color: transparent;
-  /* background-image:linear-gradient(to right bottom, rgb(50, 21, 119), rgb(68, 36, 142)) */
-  /* #321577, #44248E */
+
   background-size: 100%;
   font-size: 62.5%;
   font-family: "Poppins", sans-serif;
-  /* margin: auto 25%; */
 }
 
 h2 {
@@ -59,10 +57,6 @@ input {
   margin: 0px 15px 0;
   background-color: transparent;
 }
-
-/* input:focus {
-     outline: none;
-} */
 
 .alert {
   font-size: 1rem;
@@ -187,7 +181,7 @@ div.homeIcon {
   display: flex;
   justify-content: center;
   margin: -5rem 0 1rem 0;
-  width: 18.4rem; /* Standardized width */
+  width: 18.4rem;
 }
 
 .signupCardContainer {
@@ -279,7 +273,7 @@ button.signupFormBtn:hover {
 .icon {
   display: flex;
   justify-content: center;
-  width: 18.4rem; /* Standardized width */
+  width: 18.4rem;
 }
 
 .cardContainer {
@@ -447,7 +441,6 @@ DASHBOARD
   margin: 0;
 }
 
-/* Removed individual .dash-logo img rule, consolidated below */
 .dash-content-bkgrnd {
   background-color: white;
   padding: 2rem 3rem;
@@ -493,7 +486,7 @@ DASHBOARD
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   padding: 1rem;
-  flex: 1 1 100%; /* Allow full width and growth on mobile */
+  flex: 1 1 100%;
 }
 
 .noteBody {
@@ -514,7 +507,7 @@ DASHBOARD
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  min-height: 12rem; /* Added min-height to ensure consistent spacing */
+  min-height: 12rem;
 }
 
 .noteTitle {
@@ -559,7 +552,6 @@ DASHBOARD
   text-decoration: none;
 }
 
-/* Increase specificity for note components */
 .noteDescription .noteTitle {
   background-color: transparent;
   padding: 0 0 0.5rem 0;
@@ -622,15 +614,14 @@ DASHBOARD
   margin: 0;
 }
 
-/* Consolidated responsive image styles for logos */
 .homeIcon img,
-.icon img,         /* Login page icon */
+.icon img,
 .signupIcon img,
 .dash-logo img,
 .entryIcon img {
   max-width: 100%;
   height: auto;
-  display: block; /* Ensures the image behaves as a block and helps remove extra space */
+  display: block;
 }
 
 .dash-images {
@@ -678,7 +669,9 @@ DASHBOARD
 /* JOURNAL STYLES
 /*******************************************/
 
-.journalHeader {
+.journalHeader,
+.loginHeader,
+.signUpHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -689,7 +682,7 @@ DASHBOARD
 .entryIcon {
   display: flex;
   justify-content: center;
-  width: 18.4rem; /* Standardized width */
+  width: 18.4rem;
 }
 
 .journalForm {
@@ -703,7 +696,7 @@ DASHBOARD
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 700px; /* Optional: set maximum width for very large screens */
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -827,13 +820,6 @@ textarea {
 /******************************************
 /* LAYOUT
 /*******************************************/
-/* header {
-
-}
-
-footer {
-
-} */
 
 .noteTitle {
   background-color: transparent !important;
@@ -879,7 +865,7 @@ div.noteTitle span.mood-icon-display iconify-icon {
 
 .noteDate {
   padding: 0.5rem 0 0 0 !important;
-  margin-top: auto !important; /* Changed from 0.5rem to auto */
+  margin-top: auto !important;
   margin-bottom: 0 !important;
   justify-self: flex-end;
 }
@@ -897,7 +883,6 @@ div.noteTitle span.mood-icon-display iconify-icon {
   margin: 0 !important;
 }
 
-/* Add this new container at the top of your styles */
 .top-header {
   display: flex;
   justify-content: space-between;
@@ -906,19 +891,17 @@ div.noteTitle span.mood-icon-display iconify-icon {
   padding: 0.5rem 1rem;
 }
 
-/* Modify existing menu-container */
 .menu-container {
   display: flex;
   align-items: center;
   margin: 0;
 }
 
-/* Media queries for .note from HEAD version */
 @media (min-width: 768px) {
   .note {
-    width: 300px; /* Fixed width */
-    flex: 0 0 300px; /* Don't grow or shrink */
-    margin: 1rem; /* Keep existing margin */
+    width: 300px;
+    flex: 0 0 300px;
+    margin: 1rem;
   }
 }
 
@@ -958,7 +941,7 @@ ul {
   height: 2px;
   border-radius: 10px;
   color: black;
-  /* background-color: white; */ /* Original HEAD had this, likely error, should be visible */
+
   position: absolute;
   transform: rotate(0deg);
   transition: 0.4s ease-in-out;
@@ -1028,10 +1011,9 @@ ul {
 /* RESPONSIVE STYLES
 /*******************************************/
 
-/* General adjustments for smaller screens */
 @media (max-width: 767px) {
   body {
-    font-size: 55%; /* Adjust base font size for rem calculation if needed */
+    font-size: 55%;
   }
 
   h2 {
@@ -1055,7 +1037,7 @@ ul {
   }
 
   .homeBtns a {
-    margin: 1rem 0; /* Adjusted margin for stacked buttons */
+    margin: 1rem 0;
     text-align: center;
   }
 
@@ -1066,36 +1048,33 @@ ul {
     padding: 1.5rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    height: auto; /* Allow height to adjust to content */
+    height: auto;
   }
 
   .signupIcon {
-    margin: -2rem 0 1rem 0; /* Adjust icon margin */
-    width: 13.8rem; /* Standardized width for mobile */
+    margin: -2rem 0 1rem 0;
+    width: 13.8rem;
   }
 
   .icon {
     /* For login icon */
     margin: 1rem 0 1.5rem 0;
-    width: 13.8rem; /* Standardized width for mobile */
+    width: 13.8rem;
   }
 
   .homeIcon {
-    /* Standardized width for mobile */
     width: 13.8rem;
-    /* Retain existing margin or adjust if necessary, current mobile margin is implicitly inherited or 0 if overridden by * reset */
-    /* The desktop margin: -2rem 0 2rem 0; might be too much for mobile if not overridden by a more general rule. */
   }
 
   .signupFormInput,
   .loginFormInput {
     width: 100%;
-    font-size: 1.5rem; /* Adjust icon/input size */
+    font-size: 1.5rem;
   }
 
   input.signupFormBox,
   input.loginFormBox {
-    width: calc(100% - 40px); /* Adjust based on icon size and padding */
+    width: calc(100% - 40px);
   }
 
   input.signupFormBtn,
@@ -1108,8 +1087,8 @@ ul {
 
   /* Dashboard */
   .dash-content-bkgrnd {
-    width: 90%; /* Changed from 95% */
-    padding: 0.5rem; /* Changed from 1rem */
+    width: 90%;
+    padding: 0.5rem;
     margin-bottom: 2rem;
   }
 
@@ -1121,7 +1100,7 @@ ul {
   }
 
   .dash-logo {
-    width: 13.8rem; /* Changed from 15rem */
+    width: 13.8rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     align-self: center;
@@ -1130,7 +1109,7 @@ ul {
   .dash-filter {
     flex-direction: column;
     align-items: stretch;
-    font-size: 1.5rem; /* Smaller filter text */
+    font-size: 1.5rem;
     margin-left: 0;
   }
 
@@ -1141,7 +1120,7 @@ ul {
   }
 
   .dashEmoji {
-    justify-content: center; /* Center emojis */
+    justify-content: center;
     flex-wrap: wrap;
   }
 
@@ -1150,17 +1129,13 @@ ul {
   }
 
   .dashEmoji .emojiLabel iconify-icon {
-    font-size: 3rem; /* Smaller emoji icons for filter */
+    font-size: 3rem;
   }
 
   .note {
-    /* On mobile, ensure note takes full width, min-width from larger screens is overridden */
-    width: calc(100% - 2rem); /* Account for margin: 1rem on left and right */
-    /* The global 'margin: 1rem;' will still apply. */
-    /* No need for margin-left/right: auto due to flex container and width setting. */
+    width: calc(100% - 2rem);
   }
 
-  /* Journal Form */
   .journalForm {
     width: 90%;
     padding: 1.5rem;
@@ -1168,47 +1143,40 @@ ul {
 
   .entryIcon {
     margin: -2rem 0 1rem 0;
-    width: 13.8rem; /* Standardized width for mobile */
+    width: 13.8rem;
     align-self: center;
   }
 
   .titlebar {
-    /* For journal entry page */
     flex-direction: column;
     align-items: center;
   }
 
   .entryTitle {
-    /* Journal entry title */
     font-size: 2rem;
     margin-bottom: 1rem;
   }
 
   .journalEmoji {
-    /* container for emoji selectors on journal page */
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 1rem;
   }
 
   .journalEmoji .emojiLabel iconify-icon {
-    /* individual emoji icons in journal page */
     font-size: 3.5rem;
   }
 
   .formInputs {
-    /* General class for date/title inputs in journal */
     width: 100%;
     margin-left: 0;
   }
 
   textarea {
-    /* Text area in journal */
     font-size: 1.2rem;
   }
 
   .journalInputs .submit {
-    /* Submit button in journal */
     width: 100%;
     text-align: center;
     margin-top: 1rem;
@@ -1217,28 +1185,23 @@ ul {
 
   /* Menu */
   #dashMenu {
-    /* Ensure menu icon container on dashboard is accessible */
     margin-left: 1rem;
     margin-top: 1rem;
   }
   #dashMenu .dashMenuWrapper {
-    /* Make sure it's on top */
     z-index: 1000;
   }
   .menu-wrapper {
-    /* General menu icon wrapper */
     margin: 10px;
   }
 
   .addEntryBtn {
-    /* floating action button */
     font-size: 3rem;
     bottom: 1rem;
     right: 1rem;
   }
 }
 
-/* Tablet adjustments */
 @media (min-width: 768px) {
   body {
     font-size: 60%;
@@ -1249,7 +1212,7 @@ ul {
   }
 
   .homepageBody {
-    gap: 2rem; /* Add gap between elements */
+    gap: 2rem;
   }
 
   .homeContainer {
@@ -1258,18 +1221,18 @@ ul {
   }
 
   .homeBtns a {
-    padding: 0.8rem 2rem; /* Slightly smaller buttons */
+    padding: 0.8rem 2rem;
   }
 
   .signupCard,
   .card {
-    width: 70%;
+    width: 30%;
     padding: 2rem;
   }
 
   .signupFormInput,
   .loginFormInput {
-    width: 80%; /* Allow some space */
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -1284,7 +1247,7 @@ ul {
   }
 
   .dash-filter {
-    font-size: 1.8rem; /* Adjust filter text size */
+    font-size: 1.8rem;
   }
 
   .dash-filter > span {
@@ -1298,16 +1261,10 @@ ul {
   }
 
   .entryTitle {
-    /* Journal entry title on tablet */
     font-size: 3rem;
   }
-  /* .note media queries for this range (768px-1023px) are already defined by HEAD version above */
 }
 
-/* Media queries for .note for min-width: 768px, 1024px, 1200px are taken from HEAD (defined above) */
-/* The e3cd316 branch also had these at the end of its responsive styles, essentially duplicating them. */
-/* We rely on the ones defined above from HEAD for .note responsiveness. */
-/* No other specific overrides from e3cd316 for 1024px+ are present in its responsive block beyond .note */
 .circle-btn {
   display: flex;
   align-items: center;
