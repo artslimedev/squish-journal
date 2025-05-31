@@ -409,7 +409,7 @@ DASHBOARD
 .dash-logo {
   width: 23rem;
   display: flex;
-  align-self: flex-end;
+  align-self: flex-end; /* Changed back to flex-end */
   margin-top: -2rem;
   margin-bottom: 1.5rem;
 }
@@ -978,8 +978,8 @@ ul {
 
   /* Dashboard */
   .dash-content-bkgrnd {
-    width: 95%;
-    padding: 1rem;
+    width: 90%; /* Changed from 95% */
+    padding: 0.5rem; /* Changed from 1rem */
     margin-bottom: 2rem;
   }
 
@@ -1024,8 +1024,9 @@ ul {
   }
 
   .note { /* On mobile, ensure note takes full width, min-width from larger screens is overridden */
-    /* flex-basis and min-width removed, width: 300px applies */
-    /* This might need further adjustment if 300px is too wide for some mobile screens */
+    width: calc(100% - 2rem); /* Account for margin: 1rem on left and right */
+    /* The global 'margin: 1rem;' will still apply. */
+    /* No need for margin-left/right: auto due to flex container and width setting. */
   }
 
   /* Journal Form */
