@@ -4,7 +4,7 @@ This app is a journal for the ones with the busiest hectic lives. It was made as
 
 **Link to project: [Squish](https://squish-production.up.railway.app/)**
 
-![alt tag](https://i.ibb.co/Ctd4cq8/Untitled.png)
+![alt tag](public/images/app.png)
 
 ## How It's Made:
 
