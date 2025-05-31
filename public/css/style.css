@@ -528,18 +528,18 @@ DASHBOARD
 .note {
      font-size: 1rem;
      text-decoration: none;
-     line-height: 1.6rem; /* New line height for the note itself */
+     line-height: normal; /* Removed specific line height for lines */
      width: 31rem;
      height: auto; /* Keep from previous refinement */
      min-height: 15rem; /* Keep from previous refinement */
      margin-right: 2rem;
      margin-bottom: 2rem;
-     background-color: rgba(173, 144, 240, .3); /* Restored original color */
-     background: repeating-linear-gradient(rgba(173, 144, 240, 1), rgba(173, 144, 240, 1) 1.5rem, rgba(255, 255, 255, .3) 1.55rem, rgba(255, 255, 255, .3) 1.6rem); /* New gradient */
-     background-position-y: 1rem; /* New background-position-y */
-     box-shadow: 0 3px 6px rgba(0,0,0,0.1); /* New shadow from feedback */
-     border-radius: 1rem; /* New border-radius from feedback */
-     padding: 0; /* Remains, handled by inner elements */
+     background-color: rgba(173, 144, 240, .3); /* Original color remains */
+     /* background: repeating-linear-gradient(...) removed */
+     /* background-position-y: 1rem; removed */
+     box-shadow: 2px 2px 5px rgba(0,0,0,0.15); /* New sticky-note shadow */
+     border-radius: 4px; /* New sticky-note border-radius */
+     padding: 1rem; /* Added global padding */
 }
 
 .noteTitle {
@@ -790,9 +790,9 @@ footer {
 
 /* Overrides for .note elements - applied due to tool limitations */
 .noteTitle {
-    background-color: rgba(97, 75, 162, 1) !important; /* Ensure original color */
-    border-bottom: .4rem solid rgba(0, 0, 0, .5) !important; /* Ensure original border */
-    padding: 1rem !important; /* Ensure original padding */
+    background-color: transparent !important; /* Made transparent for sticky note look */
+    /* border-bottom: .4rem solid rgba(0, 0, 0, .5) !important; */ /* Removed border */
+    padding: 0 0 0.5rem 0 !important; /* New padding (top, right, bottom, left) */
     /* height: 3rem; Ensure this is not overridden if it was part of the original .noteTitle and needed */
     display: flex !important; /* Ensure flex properties for alignment */
     align-items: center !important; /* Align items vertically */
@@ -802,6 +802,7 @@ footer {
 .noteTitle h3 {
     font-family: 'Poppins', sans-serif !important;
     font-size: 1.8rem !important;
+    color: #333333 !important; /* New text color */
     /* width: 16rem; Ensure this is not overridden if it was part of the original and needed */
     /* flex-grow: 1; /* Allow h3 to take space if needed, ensure mood icon is visible */
 }
@@ -812,25 +813,27 @@ div.noteTitle span.mood-icon-display {
 }
 
 div.noteTitle span.mood-icon-display iconify-icon {
-    color: white !important; /* Ensure icon matches title text color */
+    color: #333333 !important; /* New icon color */
     font-size: 1.5rem !important; /* Adjust size relative to title font (1.8rem for h3) */
     vertical-align: middle !important; /* Another alignment aid */
 }
 
 .noteText {
-    padding: 0.1rem 1rem 0.5rem 1rem !important; /* Adjusted padding-top */
+    padding: 0 !important; /* New padding, main .note padding will handle spacing */
     margin-top: 0 !important;
 }
 
 .noteText p {
     font-family: 'Poppins', sans-serif !important;
     font-size: 1rem !important;
-    line-height: 1.6rem !important; /* New line-height to match .note */
+    line-height: 1.5 !important; /* Adjusted line-height */
+    color: #333333 !important; /* Ensuring note text is also dark for readability */
 }
 
 .noteDate { /* Assuming .noteDate is a new class for a div/p wrapping the date */
-    padding: 0 1rem 0.5rem 1rem !important;
-    margin-top: 0.5rem !important;
+    /* padding: 0 1rem 0.5rem 1rem !important; */ /* Old padding */
+    padding: 0.5rem 0 0 0 !important; /* New padding, space above date, relies on .note padding for L/R */
+    margin-top: 0.5rem !important; /* This might be redundant if .noteDate p has margin-top */
 }
 
 .noteDate p { /* Styling for a p tag specifically within .noteDate */
@@ -843,6 +846,7 @@ div.noteTitle span.mood-icon-display iconify-icon {
     -webkit-box-orient: unset !important;
     -webkit-line-clamp: unset !important;
     overflow: visible !important;
+    margin-top: 0; /* Resetting margin if .noteDate container handles it */
 }
 /* End of Overrides */
 
