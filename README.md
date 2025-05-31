@@ -2,7 +2,7 @@
 
 This app is a journal for the ones with the busiest hectic lives. It was made as a tool to decompress and spill your thoughts into a journal daily. It includes login/sign up and stores your entries in a database.
 
-**Link to project: [Squish](https://squish-journal-production.up.railway.app/)**
+**Link to project: [Squish](https://squish-production.up.railway.app/)**
 
 ![alt tag](https://i.ibb.co/Ctd4cq8/Untitled.png)
 
