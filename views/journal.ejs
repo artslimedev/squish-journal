@@ -38,21 +38,27 @@
     <!-- menu-wrapper -->
 
     <ul class="menu-list accordion">    
-       <li class="accordion-toggle nav1">     
+      <li class="accordion-toggle nav1">
           <a class="menu-link" href="/">Home</a>   
-       </li>          
-       <li class="accordion-toggle nav2">               
-          <a class="menu-link" href="/dashboard">Dashboard</a>    
-       </li>     
+      </li>
+      <% if (typeof user !== 'undefined' && user) { %>
+        <li class="accordion-toggle nav2">
+            <a class="menu-link" href="/dashboard">Dashboard</a>
+        </li>
         <li class="toggle accordion-toggle nav3">   
-          <a class="menu-link" href="/journal">Journal</a>  
+            <a class="menu-link" href="/journal">Journal</a>
         </li>     
         <li class="toggle accordion-toggle nav4">    
-          <a class="menu-link" href="/logout">Logout</a>             
-       </li>     
-       <!-- <li class="toggle accordion-toggle nav5">    
-         <a class="menu-link" href="#">Logout</a>             
-      </li>      -->
+            <a class="menu-link" href="/logout">Logout</a>
+        </li>
+      <% } else { %>
+        <li class="toggle accordion-toggle nav4">
+          <a class="menu-link" href="/signup">Signup</a>
+        </li>
+        <li class="toggle accordion-toggle nav5">
+          <a class="menu-link" href="/login">Login</a>
+        </li>
+      <% } %>
     </ul>
  
  </div>
