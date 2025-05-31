@@ -1,4 +1,5 @@
 const Entry = require("../models/Entry")
+const bcrypt = require('bcrypt')
 
 module.exports = {
     getIndex: (req,res)=>{
@@ -38,5 +39,12 @@ module.exports = {
         }catch(err){
             console.log(err)
         }
-    }
+    },
+    comparePassword: async function(candidatePassword) {
+        try {
+          return await bcrypt.compare(candidatePassword, this.password)
+        } catch (err) {
+          throw err
+        }
+      }
 }

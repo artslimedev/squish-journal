@@ -13,9 +13,30 @@ module.exports = {
     getEntries: async (req,res)=>{
         console.log(req.user)
         try{
-            const entryItems = await Entry.find({userId:req.user.id})
-            const itemsTotal = await Entry.countDocuments({userId:req.user.id,entry: true})
-            res.render('dashboard.ejs', {entries: entryItems, total: itemsTotal, user: req.user})
+            let filterQuery = { userId: req.user.id };
+
+            if (req.query.mood) {
+                if (typeof req.query.mood === 'string') {
+                    filterQuery.mood = req.query.mood;
+                } else if (Array.isArray(req.query.mood)) {
+                    filterQuery.mood = { $in: req.query.mood };
+                }
+            }
+
+            const entryItems = await Entry.find(filterQuery)
+            const itemsTotal = await Entry.countDocuments(filterQuery)
+
+            let currentMoods = req.query.mood || [];
+            if (typeof currentMoods === 'string') {
+                currentMoods = [currentMoods];
+            }
+
+            res.render('dashboard.ejs', {
+                entries: entryItems,
+                total: itemsTotal,
+                user: req.user,
+                currentMoods: currentMoods
+            })
         }catch(err){
             console.log(err)
         }

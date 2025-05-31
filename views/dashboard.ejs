@@ -77,200 +77,102 @@
 
 
             <div class="dash-content-bkgrnd">
-                <div class="dash-filter">
+                <form method="GET" action="/dashboard">
+                    <div class="dash-filter">
 
-                    <div class="dash-title">
-                        <h2>Dashboard</h2>
+                        <div class="dash-title">
+                            <h2>Dashboard</h2>
+                        </div>
+
+                        <span>Filter:</span>
+                        <div class="dashEmoji">
+
+                            <div class="emojiContainer">
+                                    <label for="happy" class="emojiLabel">
+                                        <input type="checkbox" name="mood" id="happy" value="happy" class="emojiInput" onchange="this.form.submit()" <%- currentMoods.includes('happy') ? 'checked' : '' %>>
+                                        <iconify-icon icon="fa6-regular:face-smile" class="emojiFace"></iconify-icon>
+                                    </label>
+
+                            </div>
+
+                            <div class="emojiContainer">
+                                    <label for="meh" class="emojiLabel">
+                                        <input type="checkbox" name="mood" id="meh" value="meh" class="emojiInput" onchange="this.form.submit()" <%- currentMoods.includes('meh') ? 'checked' : '' %>>
+                                        <iconify-icon icon="fa6-regular:face-meh" class="emojiFace"></iconify-icon>
+                                    </label>
+
+                            </div>
+
+                            <div class="emojiContainer">
+                                    <label for="annoyed" class="emojiLabel">
+                                        <input type="checkbox" name="mood" id="annoyed" value="annoyed" class="emojiInput" onchange="this.form.submit()" <%- currentMoods.includes('annoyed') ? 'checked' : '' %>>
+                                        <iconify-icon icon="fa6-regular:face-rolling-eyes" class="emojiFace"></iconify-icon>
+                                    </label>
+
+                            </div>
+
+                            <div class="emojiContainer">
+                                    <label for="angry" class="emojiLabel">
+                                        <input type="checkbox" name="mood" id="angry" value="angry" class="emojiInput" onchange="this.form.submit()" <%- currentMoods.includes('angry') ? 'checked' : '' %>>
+                                        <iconify-icon icon="fa6-regular:face-angry" class="emojiFace"></iconify-icon>
+                                    </label>
+
+                            </div>
+                            
+                            <div class="emojiContainer">
+                                    <label for="sad" class="emojiLabel">
+                                        <input type="checkbox" name="mood" id="sad" value="sad" class="emojiInput" onchange="this.form.submit()" <%- currentMoods.includes('sad') ? 'checked' : '' %>>
+                                        <iconify-icon icon="fa6-regular:face-frown" class="emojiFace"></iconify-icon>
+                                    </label>
+
+                            </div>
+                            
+                        </div>
                     </div>
-
-                    <span>Filter:</span>
-                    <div class="dashEmoji">
-
-                        <div class="emojiContainer">
-                                <label for="happy" class="emojiLabel">
-                                    <input type="checkbox" name="mood" id="happy" value="happy" class="emojiInput">
-                                    <iconify-icon icon="fa6-regular:face-smile" class="emojiFace"></iconify-icon>
-                                </label>
-                             
-                        </div>
-                
-                        <div class="emojiContainer">
-                                <label for="meh" class="emojiLabel">
-                                    <input type="checkbox" name="mood" id="meh" value="meh" class="emojiInput">
-                                    <iconify-icon icon="fa6-regular:face-meh" class="emojiFace"></iconify-icon>
-                                </label>
-                             
-                        </div>
-                
-                        <div class="emojiContainer">
-                                <label for="annoyed" class="emojiLabel">
-                                    <input type="checkbox" name="mood" id="annoyed" value="annoyed" class="emojiInput">
-                                    <iconify-icon icon="fa6-regular:face-rolling-eyes" class="emojiFace"></iconify-icon>
-                                </label>
-                             
-                        </div>
-                
-                        <div class="emojiContainer">
-                                <label for="angry" class="emojiLabel">
-                                    <input type="checkbox" name="mood" id="angry" value="angry" class="emojiInput">
-                                    <iconify-icon icon="fa6-regular:face-angry" class="emojiFace"></iconify-icon>
-                                </label>
-                             
-                        </div>
-                        
-                        <div class="emojiContainer">
-                                <label for="sad" class="emojiLabel">
-                                    <input type="checkbox" name="mood" id="sad" value="sad" class="emojiInput">
-                                    <iconify-icon icon="fa6-regular:face-frown" class="emojiFace"></iconify-icon>
-                                </label>
-                             
-                        </div>
-                        
-                    </div>
-                </div>
+                </form>
 
                 <div>
                     <div class="dash-images">
-                        <div class="dash-row">
-
-
-
-                            <div class="note">
-                                <a href="#">
-
-                                    <div class="noteTitle">
-                                            <h3>I'm just testing this out</h3>
-                                            <iconify-icon icon="fa6-regular:face-smile"></iconify-icon>
+                        <% if (typeof entries !== 'undefined' && entries.length > 0) { %>
+                            <% entries.forEach((entry, index) => { %>
+                                <% if (index % 3 === 0) { %>
+                                    <div class="dash-row">
+                                <% } %>
+                                <div class="note">
+                                    <a href="#"> <!-- Consider linking to a detail page: /entry/<%= entry._id %> -->
+                                        <div class="noteTitle">
+                                            <h3><%= entry.title %></h3>
+                                            <span class="mood-icon-display">
+                                                <% if (entry.mood === 'happy') { %>
+                                                    <iconify-icon icon="fa6-regular:face-smile"></iconify-icon>
+                                                <% } else if (entry.mood === 'meh') { %>
+                                                    <iconify-icon icon="fa6-regular:face-meh"></iconify-icon>
+                                                <% } else if (entry.mood === 'annoyed') { %>
+                                                    <iconify-icon icon="fa6-regular:face-rolling-eyes"></iconify-icon>
+                                                <% } else if (entry.mood === 'angry') { %>
+                                                    <iconify-icon icon="fa6-regular:face-angry"></iconify-icon>
+                                                <% } else if (entry.mood === 'sad') { %>
+                                                    <iconify-icon icon="fa6-regular:face-frown"></iconify-icon>
+                                                <% } else { %>
+                                                    <%= entry.mood %> <!-- Fallback to text if mood is not recognized -->
+                                                <% } %>
+                                            </span>
                                         </div>
                                         <div class="noteText">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                            <p><%= entry.entry %></p>
                                         </div>
-
-                                </a>
-                            </div>
-
-
-
-
-                            <div class="note">
-                                <a href="#">
-
-                                    <div class="noteTitle">
-                                            <h3>Journal entry #1</h3>
+                                        <div class="noteDate">
+                                            <p>Date: <%= new Date(entry.date).toLocaleDateString() %></p>
                                         </div>
-                                        <div class="noteText">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                        </div>
-
-                                </a>
-                            </div>
-
-                            <div class="note">
-                                <a href="#">
-
-                                    <div class="noteTitle">
-                                            <h3>Journal entry #1</h3>
-                                        </div>
-                                        <div class="noteText">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                        </div>
-
-                                </a>
-                            </div>
-                        </div>
-
-
-                        <div class="dash-row">
-
-                            <div class="note">
-                                <a href="#">
-
-                                    <div class="noteTitle">
-                                            <h3>Journal entry #1</h3>
-                                        </div>
-                                        <div class="noteText">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                        </div>
-
-                                </a>
-                            </div>
-
-
-
-
-                            <div class="note">
-                                <a href="#">
-
-                                    <div class="noteTitle">
-                                            <h3>Journal entry #1</h3>
-                                        </div>
-                                        <div class="noteText">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                        </div>
-
-                                </a>
-                            </div>
-                            
-                            <div class="note">
-                                <a href="#">
-
-                                    <div class="noteTitle">
-                                            <h3>Journal entry #1</h3>
-                                        </div>
-                                        <div class="noteText">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                        </div>
-
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="dash-row">
-
-
-
-                            <div class="note">
-                                <a href="#">
-
-                                    <div class="noteTitle">
-                                            <h3>Journal entry #1</h3>
-                                        </div>
-                                        <div class="noteText">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                        </div>
-
-                                </a>
-                            </div>
-
-
-
-
-                            <div class="note">
-                                <a href="#">
-
-                                    <div class="noteTitle">
-                                            <h3>Journal entry #1</h3>
-                                        </div>
-                                        <div class="noteText">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                        </div>
-
-                                </a>
-                            </div>
-                            
-                            <div class="note">
-                                <a href="#">
-
-                                    <div class="noteTitle">
-                                            <h3>Journal entry #1</h3>
-                                        </div>
-                                        <div class="noteText">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                        </div>
-
-                                </a>
-                            </div>
-                        </div>
+                                    </a>
+                                </div>
+                                <% if (index % 3 === 2 || index === entries.length - 1) { %>
+                                    </div>
+                                <% } %>
+                            <% }) %>
+                        <% } else { %>
+                            <p>No entries found. Try adjusting your filters or create a new entry!</p>
+                        <% } %>
                     </div>
 
                     <div class="dash-all-buttons">
