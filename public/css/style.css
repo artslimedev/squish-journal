@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* Box Model Hack */
 * {
   box-sizing: border-box;
@@ -35,14 +34,13 @@ body {
 }
 
 body {
+  min-height: 100vh;
   background-image: linear-gradient(to bottom right, #a88beb, #512aa9);
   background-color: transparent;
-  /* background-image:linear-gradient(to right bottom, rgb(50, 21, 119), rgb(68, 36, 142)) */
-  /* #321577, #44248E */
+
   background-size: 100%;
   font-size: 62.5%;
   font-family: "Poppins", sans-serif;
-  /* margin: auto 25%; */
 }
 
 h2 {
@@ -60,10 +58,6 @@ input {
   background-color: transparent;
 }
 
-/* input:focus {
-     outline: none;
-} */
-
 .alert {
   font-size: 1rem;
   color: red;
@@ -77,21 +71,37 @@ a {
 /* HOME PAGE
 /*******************************************/
 
+.homepageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem 0;
+  margin-bottom: 1rem;
+}
+
 div.homeIcon {
   display: flex;
   justify-content: center;
-  margin: -2rem 0 2rem 0;
+  align-items: flex-end;
+}
+
+.homepageBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
 .homeTitle {
   color: white;
+  font-size: 1.5rem;
 }
 
 .homeTitleContainer {
   display: flex;
   justify-content: center;
-  margin: 0 0 3rem 0;
-  font-size: 3rem;
+  margin: 0 0 0.5rem 0;
 }
 
 .homeContainer {
@@ -171,6 +181,7 @@ div.homeIcon {
   display: flex;
   justify-content: center;
   margin: -5rem 0 1rem 0;
+  width: 18.4rem;
 }
 
 .signupCardContainer {
@@ -180,20 +191,6 @@ div.homeIcon {
   align-items: center;
 }
 
-/* .cardContainer span {
-     font-size: 1.3rem;
-     margin: 0 1rem;
-}
-
-.cardContainer .switch {
-     margin-top: 2rem;
-     margin-bottom: 3rem;
-} */
-
-/* .switch:checked ~ .card {
-     transform: rotateY(180deg);
-   } */
-
 .signupCard {
   background-color: white;
   padding: 3rem;
@@ -202,32 +199,7 @@ div.homeIcon {
   height: fit-content;
   border-radius: 30px;
   box-shadow: rgba(100, 100, 100, 0.2) 6px 2px 10px;
-  /* transform-style: preserve-3d;
-     transition: all 1s ease-in-out;
-     position: relative; */
 }
-
-/* .card:hover {
-     transform: rotateY(180deg);
-} */
-
-/* .card .flip {
-     backface-visibility: hidden;
-     overflow: hidden;
-     position: absolute;
-     top: 5%;
-     right: .2%;
-} */
-
-/* .cardBack {
-     transform: rotateY(180deg);
-     position: absolute;
-} */
-
-/* #cardFront {
-     position: absolute;
-     top: 13%;
-} */
 
 .signupCard h2 {
   color: #512aa9;
@@ -301,7 +273,7 @@ button.signupFormBtn:hover {
 .icon {
   display: flex;
   justify-content: center;
-  margin: -2rem 0 3rem 0;
+  width: 18.4rem;
 }
 
 .cardContainer {
@@ -310,16 +282,6 @@ button.signupFormBtn:hover {
   justify-content: center;
   align-items: center;
 }
-
-/* .cardContainer span {
-     font-size: 1.3rem;
-     margin: 0 1rem;
-}
-
-.cardContainer .switch {
-     margin-top: 2rem;
-     margin-bottom: 3rem;
-} */
 
 .switch:checked ~ .card {
   transform: rotateY(180deg);
@@ -333,32 +295,7 @@ button.signupFormBtn:hover {
   height: 25rem;
   border-radius: 30px;
   box-shadow: rgba(100, 100, 100, 0.2) 6px 2px 10px;
-  /* transform-style: preserve-3d;
-     transition: all 1s ease-in-out;
-     position: relative; */
 }
-
-/* .card:hover {
-     transform: rotateY(180deg);
-} */
-
-/* .card .flip {
-     backface-visibility: hidden;
-     overflow: hidden;
-     position: absolute;
-     top: 5%;
-     right: .2%;
-} */
-
-/* .cardBack {
-     transform: rotateY(180deg);
-     position: absolute;
-} */
-
-/* #cardFront {
-     position: absolute;
-     top: 13%;
-} */
 
 .card h2 {
   color: #512aa9;
@@ -373,8 +310,7 @@ button.signupFormBtn:hover {
   align-items: center;
 }
 
-.loginForm,
-.signupForm {
+.loginForm {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -447,7 +383,27 @@ DASHBOARD
   top: 7rem;
 }
 
-.dash-container {
+.dashHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.dashIcon {
+  margin-left: auto;
+  height: 80px;
+}
+
+.dashIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dash-container,
+.formPage {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -464,8 +420,7 @@ DASHBOARD
 }
 .titleLogo {
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  align-items: center;
 }
 
 .dash-title {
@@ -481,18 +436,11 @@ DASHBOARD
   letter-spacing: 0.1em;
   margin-left: -1.2rem;
 }
-/* .dash-logo{
-     display: flex;
-     justify-content: flex-end;
- } */
 
 .dash-logo {
-  width: 23rem;
-  display: flex;
-  align-self: flex-end;
-  margin-top: -2rem;
-  margin-bottom: 1.5rem;
+  margin: 0;
 }
+
 .dash-content-bkgrnd {
   background-color: white;
   padding: 2rem 3rem;
@@ -530,21 +478,36 @@ DASHBOARD
   font-size: 1rem;
   text-decoration: none;
   line-height: normal;
-
   height: auto;
   min-height: 15rem;
-
   margin-bottom: 2rem;
   margin: 1rem;
   background-color: rgba(173, 144, 240, 0.3);
-
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   padding: 1rem;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: calc(100% - 2rem);
-  min-width: 280px;
+  flex: 1 1 100%;
+}
+
+.noteBody {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.noteLinkBody {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.noteDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 12rem;
 }
 
 .noteTitle {
@@ -589,6 +552,78 @@ DASHBOARD
   text-decoration: none;
 }
 
+.noteDescription .noteTitle {
+  background-color: transparent;
+  padding: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #333333;
+}
+
+.noteDescription .noteTitle h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  color: #333333;
+  width: auto;
+  margin: 0;
+}
+
+.noteDescription .noteTitle span.mood-icon-display {
+  margin-left: 0.5rem;
+  line-height: 1;
+}
+
+.noteDescription .noteTitle span.mood-icon-display iconify-icon {
+  color: #333333;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.noteDescription .noteText {
+  padding: 0;
+  margin-top: 0;
+  color: #333333;
+}
+
+.noteDescription .noteText p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333333;
+  margin: 0;
+}
+
+.noteDescription .noteDate {
+  padding: 0.5rem 0 0 0;
+  margin-top: auto;
+  margin-bottom: 0;
+  justify-self: flex-end;
+}
+
+.noteDescription .noteDate p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  color: #333;
+  line-height: 1.2;
+  display: block;
+  -webkit-box-orient: unset;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  overflow: visible;
+  margin: 0;
+}
+
+.homeIcon img,
+.icon img,
+.signupIcon img,
+.dash-logo img,
+.entryIcon img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .dash-images {
   display: flex;
   justify-content: flex-start;
@@ -621,35 +656,38 @@ DASHBOARD
 
 .addEntryBtn {
   position: fixed;
-  font-size: 4rem;
   bottom: 2rem;
   right: 3rem;
   z-index: 1;
 }
 
 .addEntryBtn #addBtn {
-  color: white;
+  color: #ffffff;
 }
 
 /******************************************
 /* JOURNAL STYLES
 /*******************************************/
 
-.formPage {
-  margin: auto;
+.journalHeader,
+.loginHeader,
+.signUpHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
 }
 
 .entryIcon {
   display: flex;
   justify-content: center;
-  margin: -5rem 0 1rem 0;
-  transform: scale(80%);
+  width: 18.4rem;
 }
 
 .journalForm {
   background-color: white;
   padding: 40px 40px 20px 40px;
-  /* margin: 50px 300px 120px 300px; */
   margin: auto 25%;
   width: fit-content;
   height: fit-content;
@@ -657,6 +695,9 @@ DASHBOARD
   box-shadow: rgba(100, 100, 100, 0.2) 6px 2px 10px;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 label {
@@ -702,6 +743,7 @@ textarea {
   background-color: rgba(197, 197, 197, 0.535);
   font-size: 1rem;
   width: 100%;
+  height: 140px;
   border-radius: 20px;
   border: none;
   padding: 10px;
@@ -772,24 +814,15 @@ textarea {
 
 .journalInputs .submit:hover {
   background-image: linear-gradient(to bottom, #a88beb, #512aa9);
-  /* background: rgba(110, 92, 157, 1); */
   color: white;
 }
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-/* header {
-
-}
-
-footer {
-
-} */
 
 .noteTitle {
   background-color: transparent !important;
-
   padding: 0 0 0.5rem 0 !important;
   display: flex !important;
   align-items: center !important;
@@ -832,7 +865,9 @@ div.noteTitle span.mood-icon-display iconify-icon {
 
 .noteDate {
   padding: 0.5rem 0 0 0 !important;
-  margin-top: 0.5rem !important;
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+  justify-self: flex-end;
 }
 
 .noteDate p {
@@ -848,21 +883,25 @@ div.noteTitle span.mood-icon-display iconify-icon {
   margin: 0 !important;
 }
 
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
 @media (min-width: 768px) {
   .note {
-    flex-basis: calc(50% - 2rem);
-  }
-}
-
-@media (min-width: 1024px) {
-  .note {
-    flex-basis: calc(33.333% - 2rem);
-  }
-}
-
-@media (min-width: 1200px) {
-  .note {
-    max-width: 310px;
+    width: 300px;
+    flex: 0 0 300px;
+    margin: 1rem;
   }
 }
 
@@ -884,7 +923,6 @@ ul {
   width: 50px;
   cursor: pointer;
   border-radius: 50px;
-  margin: 20px;
   background-color: white;
 }
 
@@ -903,7 +941,7 @@ ul {
   height: 2px;
   border-radius: 10px;
   color: black;
-  background-color: white;
+
   position: absolute;
   transform: rotate(0deg);
   transition: 0.4s ease-in-out;
@@ -935,1002 +973,11 @@ ul {
 .menu-container .menu-list {
   padding-top: 20px;
   padding-bottom: 20px;
-}
-.menu-container .menu-list {
   list-style: none;
   padding-left: 0;
   display: block;
   position: absolute;
-  width: 100%;
-  max-width: 200px;
-  background: white;
-  box-shadow: rgba(100, 100, 100, 0.2) 6px 2px 10px;
-  z-index: 999;
-  overflow-y: auto;
-  overflow-x: hidden;
-  left: -100%;
-  border-radius: 0 30px 30px 0;
-}
-
-.menu-container .menu-list li.accordion-toggle {
-  font-size: 16px;
-  padding: 20px;
-  text-transform: uppercase;
-  border-top: 1px solid #dbdcd2;
-}
-.menu-container .menu-list li:first-of-type {
-  border-top: 0;
-}
-
-.accordion-toggle,
-.accordion-content {
-  cursor: pointer;
-  font-size: 16px;
-  position: relative;
-  letter-spacing: 1px;
-}
-=======
-/* Box Model Hack */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* Clear fix hack */
-.clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-
-.clear {
-  clear: both;
-}
-
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
-
-html {
-  margin: auto;
-}
-
-html,
-body {
-  height: 100%;
-  overflow: auto;
-}
-
-body {
-  background-image: linear-gradient(to bottom right, #a88beb, #512aa9);
-  background-color: transparent;
-  /* background-image:linear-gradient(to right bottom, rgb(50, 21, 119), rgb(68, 36, 142)) */
-  /* #321577, #44248E */
-  background-size: 100%;
-  font-size: 62.5%;
-  font-family: "Poppins", sans-serif;
-  /* margin: auto 25%; */
-}
-
-h2 {
-  font-size: 2rem;
-  font-family: sans-serif;
-  padding: 20px;
-}
-
-input {
-  font-size: 1rem;
-  border-radius: 5px;
-  border: none;
-  padding: 10px;
-  margin: 0px 15px 0;
-  background-color: transparent;
-}
-
-/* input:focus {
-     outline: none;
-} */
-
-.alert {
-  font-size: 1rem;
-  color: red;
-}
-
-a {
-  text-decoration: none;
-}
-
-/******************************************
-/* HOME PAGE
-/*******************************************/
-
-div.homeIcon {
-  display: flex;
-  justify-content: center;
-  margin: -2rem 0 2rem 0;
-}
-
-.homeTitle {
-  color: white;
-}
-
-.homeTitleContainer {
-  display: flex;
-  justify-content: center;
-  margin: 0 0 3rem 0;
-  font-size: 3rem;
-}
-
-.homeContainer {
-  margin: auto;
-  padding: 2rem;
-  width: 50rem;
-  height: fit-content;
-  background-color: rgba(255, 255, 255, 1);
-  color: black;
-  font-size: 1.2rem;
-  border-radius: 2rem;
-}
-
-.homeBtns {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: #512aa9;
-  margin: 1rem 2rem;
-}
-
-.homeBtns a {
-  margin: 1.5rem 1.5rem 0 1.5rem;
-  padding: 1rem 3rem;
-  border: 2px solid #512aa9;
-  border-radius: 5rem;
-  text-decoration: none;
-  color: #512aa9;
-  font-size: 1rem;
-}
-
-.homeBtns a:hover {
-  background-color: #a88beb;
-  border: #a88beb;
-  color: white;
-}
-
-/******************************************
-/* LOGIN SWITCHER
-/*******************************************/
-
-/* .checkbox:checked + label,
-.checkbox:not(:checked) + label{
-  width: 60px;
-  height: 16px;
-  border-radius: 8px;
-  padding: 0;
-  margin: 10px auto;
-  cursor: pointer;
-  background-color: #ffeba7;
-}
-.checkbox:checked + label:before,
-.checkbox:not(:checked) + label:before{
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  color: #ffeba7;
-  background-color: #102770;
-  font-family: 'unicons';
-  content: '\eb4f';
-  line-height: 36px;
-  text-align: center;
-  font-size: 24px;
-  transition: all 0.5s ease;
-} */
-/* .checkbox:checked + label:before {
-  transform: translateX(44px) rotate(-270deg);
-} */
-
-/******************************************
-/* SIGNUP STYLES
-/*******************************************/
-
-.signupIcon {
-  display: flex;
-  justify-content: center;
-  margin: -5rem 0 1rem 0;
-}
-
-.signupCardContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* .cardContainer span {
-     font-size: 1.3rem;
-     margin: 0 1rem;
-}
-
-.cardContainer .switch {
-     margin-top: 2rem;
-     margin-bottom: 3rem;
-} */
-
-/* .switch:checked ~ .card {
-     transform: rotateY(180deg);
-   } */
-
-.signupCard {
-  background-color: white;
-  padding: 3rem;
-  margin: auto;
-  width: 30rem;
-  height: fit-content;
-  border-radius: 30px;
-  box-shadow: rgba(100, 100, 100, 0.2) 6px 2px 10px;
-  /* transform-style: preserve-3d;
-     transition: all 1s ease-in-out;
-     position: relative; */
-}
-
-/* .card:hover {
-     transform: rotateY(180deg);
-} */
-
-/* .card .flip {
-     backface-visibility: hidden;
-     overflow: hidden;
-     position: absolute;
-     top: 5%;
-     right: .2%;
-} */
-
-/* .cardBack {
-     transform: rotateY(180deg);
-     position: absolute;
-} */
-
-/* #cardFront {
-     position: absolute;
-     top: 13%;
-} */
-
-.signupCard h2 {
-  color: #512aa9;
-}
-
-.signupCardBack {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.signupForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1rem;
-}
-
-.signupFormInput {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  margin-bottom: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 20rem;
-  background-color: rgba(139, 124, 183, 0.283);
-  border-radius: 2rem;
-}
-
-input.signupFormBox {
-  margin-right: 0;
-  margin-left: 0;
-  width: 15rem;
-}
-
-input.signupFormBtn {
-  border: 0.2rem solid rgba(110, 92, 157, 1);
-  border-radius: 2rem;
-  width: 9rem;
-}
-
-input.signupFormBtn:hover {
-  background-color: #a88beb;
-  color: white;
-}
-
-button.signupFormBtn {
-  border: 0.2rem solid rgba(110, 92, 157, 1);
-  border-radius: 2rem;
-  width: 9rem;
-}
-
-button.signupFormBtn:hover {
-  background-color: #a88beb;
-  color: white;
-}
-
-.signupBtns {
-  display: flex;
-  justify-content: center;
-}
-
-/******************************************
-/* LOGIN STYLES
-/*******************************************/
-
-.icon {
-  display: flex;
-  justify-content: center;
-  margin: -2rem 0 3rem 0;
-}
-
-.cardContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* .cardContainer span {
-     font-size: 1.3rem;
-     margin: 0 1rem;
-}
-
-.cardContainer .switch {
-     margin-top: 2rem;
-     margin-bottom: 3rem;
-} */
-
-.switch:checked ~ .card {
-  transform: rotateY(180deg);
-}
-
-.card {
-  background-color: white;
-  padding: 3rem;
-  margin: auto;
-  width: 30rem;
-  height: 25rem;
-  border-radius: 30px;
-  box-shadow: rgba(100, 100, 100, 0.2) 6px 2px 10px;
-  /* transform-style: preserve-3d;
-     transition: all 1s ease-in-out;
-     position: relative; */
-}
-
-/* .card:hover {
-     transform: rotateY(180deg);
-} */
-
-/* .card .flip {
-     backface-visibility: hidden;
-     overflow: hidden;
-     position: absolute;
-     top: 5%;
-     right: .2%;
-} */
-
-/* .cardBack {
-     transform: rotateY(180deg);
-     position: absolute;
-} */
-
-/* #cardFront {
-     position: absolute;
-     top: 13%;
-} */
-
-.card h2 {
-  color: #512aa9;
-}
-
-.cardFront,
-.cardBack {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.loginForm,
-.signupForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1rem;
-}
-
-.loginFormInput {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  margin-bottom: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 20rem;
-  background-color: rgba(139, 124, 183, 0.283);
-  border-radius: 2rem;
-}
-
-input.loginFormBox {
-  margin-right: 0;
-  margin-left: 0;
-  width: 15rem;
-}
-
-input.loginFormBtn {
-  border: 0.2rem solid rgba(110, 92, 157, 1);
-  border-radius: 2rem;
-  width: 9rem;
-}
-
-input.loginFormBtn:hover {
-  background-color: #a88beb;
-  color: white;
-}
-
-button.loginFormBtn {
-  border: 0.2rem solid rgba(110, 92, 157, 1);
-  border-radius: 2rem;
-  width: 9rem;
-}
-
-button.loginFormBtn:hover {
-  background-color: #a88beb;
-  color: white;
-}
-
-.loginBtns {
-  display: flex;
-  justify-content: center;
-}
-
-/******************************************
-DASHBOARD
-/******************************************/
-
-#dashMenu {
-  margin-left: 2rem;
-  margin-top: 2rem;
-}
-
-#dashMenu .dashMenuWrapper {
-  position: fixed;
-  top: 1.3rem;
-  margin-bottom: 2rem;
-}
-
-#dashMenu .dashMenuList {
-  position: absolute;
-  top: 7rem;
-}
-
-.dash-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-.dash-body {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-.titleLogo {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.dash-title {
-  display: flex;
-  align-self: center;
-  width: 100%;
-}
-
-.dash-title > h2 {
-  font-size: 3rem;
-  color: #000000;
-  font-family: "Poppins", sans-serif;
-  letter-spacing: 0.1em;
-  margin-left: -1.2rem;
-}
-/* .dash-logo{
-     display: flex;
-     justify-content: flex-end;
- } */
-
-.dash-logo {
-  width: 23rem;
-  display: flex;
-  align-self: flex-end;
-  margin-top: -2rem;
-  margin-bottom: 1.5rem;
-}
-.dash-content-bkgrnd {
-  background-color: white;
-  padding: 2rem 3rem;
-  margin: auto;
-  margin-bottom: 5rem;
-  width: 70rem;
-  height: fit-content;
-  border-radius: 30px;
-  box-shadow: rgba(100, 100, 100, 0.2) 6px 2px 10px;
-}
-.dash-filter {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
-  margin-left: 0.5rem;
-}
-.dash-filter > span {
-  font-size: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.dashEmoji {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: fit-content;
-  margin-right: 1rem;
-}
-
-.note {
-  font-size: 1rem;
-  text-decoration: none;
-  line-height: normal;
-  width: ;
-  height: 220px;
-  min-height: 15rem;
-
-  margin-bottom: 2rem;
-  margin: 1rem;
-  background-color: rgba(173, 144, 240, 0.3);
-
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  padding: 1rem;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: calc(100% - 2rem);
-  min-width: 280px;
-}
-
-.noteBody {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.noteLinkBody {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.noteDescription {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.noteTitle {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 3rem;
-  background-color: rgba(97, 75, 162, 1);
-  padding: 1rem;
-  color: white;
-  font-size: 1.4rem;
-  border-bottom: 0.4rem solid rgba(0, 0, 0, 0.5);
-}
-
-.noteTitle h3 {
-  width: 16rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-family: "Reenie Beanie", cursive;
-  font-size: 2rem;
-}
-
-.noteText {
-  padding: 0.1rem 0.8rem 0.8rem 0.8rem;
-  margin-top: 0.5rem;
-  color: black;
-  overflow: hidden;
-}
-
-.noteText p {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
-  overflow: hidden;
-  font-family: "Reenie Beanie", cursive;
-  font-size: 1.6rem;
-}
-
-.note a {
-  text-decoration: none;
-}
-
-.dash-images {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.dash-row {
-  display: contents;
-}
-.dash-all-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.dash-button button {
-  width: 7em;
-  height: 2em;
-  font-size: 20px;
-  border-radius: 20px;
-  border: solid #7660a5;
-  background: #ffffff;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  margin: 1em 2em 3rem 3rem;
-}
-
-.dash-button button:hover {
-  background-color: #ad90f0;
-}
-
-.addEntryBtn {
-  position: fixed;
-  font-size: 4rem;
-  bottom: 2rem;
-  right: 3rem;
-  z-index: 1;
-}
-
-.addEntryBtn #addBtn {
-  color: white;
-}
-
-/******************************************
-/* JOURNAL STYLES
-/*******************************************/
-
-.formPage {
-  margin: auto;
-}
-
-.entryIcon {
-  display: flex;
-  justify-content: center;
-  margin: -5rem 0 1rem 0;
-  transform: scale(80%);
-}
-
-.journalForm {
-  background-color: white;
-  padding: 40px 40px 20px 40px;
-  /* margin: 50px 300px 120px 300px; */
-  margin: auto 25%;
-  width: fit-content;
-  height: fit-content;
-  border-radius: 30px;
-  box-shadow: rgba(100, 100, 100, 0.2) 6px 2px 10px;
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  font-size: 1.3rem;
-}
-
-.emojiLabel {
-  font-size: 3rem;
-  color: rgba(110, 92, 157, 1);
-}
-
-.titlebar {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.entryTitle {
-  font-size: 2.5rem;
-}
-
-.entry {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.formInputs {
-  background-color: rgba(197, 197, 197, 0.535);
-  font-size: 1rem;
-  border-radius: 5px;
-  border: none;
-  padding: 10px;
-  margin-bottom: 15px;
-  margin-left: 0;
-}
-
-.formInputs:active {
-  border: none;
-}
-
-textarea {
-  background-color: rgba(197, 197, 197, 0.535);
-  font-size: 1rem;
-  width: 100%;
-  border-radius: 20px;
-  border: none;
-  padding: 10px;
-  margin-bottom: 15px;
-  resize: none;
-}
-
-.journalEmoji {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.emojiContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0.5rem;
-  align-self: center;
-  justify-self: center;
-}
-
-.emojiContainer input {
-  display: none;
-}
-
-.emoji iconify-icon {
-  font-size: 5rem;
-  margin: 0 10px;
-  color: rgba(110, 92, 157, 1);
-  padding: 5px;
-}
-
-.emojiInput:hover + .emojiFace {
-  color: black;
-  background-image: linear-gradient(to bottom right, #a88beb, #512aa9);
-  border-radius: 50%;
-}
-.emojiInput:checked + .emojiFace {
-  color: black;
-  background-image: linear-gradient(to bottom right, #a88beb, #512aa9);
-  border-radius: 50%;
-}
-
-.titlebar {
-  display: flex;
-  justify-content: space-between;
-}
-
-.journalIputs {
-  display: flex;
-}
-
-.journalInputs input {
-  font-family: monospace;
-}
-
-.journalInputs .submit {
-  align-self: flex-end;
-  font-size: 1.4rem;
-  font-weight: 500;
-  text-decoration: none;
-  color: black;
-  padding: 5px 15px;
-  border: 3px solid rgba(110, 92, 157, 1);
-  border-radius: 20px;
-}
-
-.journalInputs .submit:hover {
-  background-image: linear-gradient(to bottom, #a88beb, #512aa9);
-  /* background: rgba(110, 92, 157, 1); */
-  color: white;
-}
-
-/******************************************
-/* LAYOUT
-/*******************************************/
-/* header {
-
-}
-
-footer {
-
-} */
-
-.dash-content-bkgrnd .noteTitle {
-  background-color: transparent;
-  padding: 0 0 0.5rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #333333;
-}
-
-.dash-content-bkgrnd .noteTitle h3 {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.8rem;
-  color: #333333;
-  width: auto;
-  margin: 0;
-}
-
-.dash-content-bkgrnd div.noteTitle span.mood-icon-display {
-  margin-left: 0.5rem;
-  line-height: 1;
-}
-
-.dash-content-bkgrnd div.noteTitle span.mood-icon-display iconify-icon {
-  color: #333333;
-  font-size: 1.5rem;
-  vertical-align: middle;
-}
-
-.dash-content-bkgrnd .noteText {
-  padding: 0;
-  margin-top: 0;
-  color: #333333;
-}
-
-.dash-content-bkgrnd .noteText p {
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #333333;
-  margin: 0;
-}
-
-.dash-content-bkgrnd .noteDate {
-  padding: 0.5rem 0 0 0;
-  margin-top: 0.5rem;
-}
-
-.dash-content-bkgrnd .noteDate p {
-  font-family: "Poppins", sans-serif;
-  font-size: 0.8rem;
-  color: #333;
-  line-height: 1.2;
-  display: block;
-  -webkit-box-orient: unset;
-  -webkit-line-clamp: unset;
-  line-clamp: unset;
-  overflow: visible;
-  margin: 0;
-}
-
-@media (min-width: 768px) {
-  .note {
-    flex-basis: calc(50% - 2rem);
-  }
-}
-
-@media (min-width: 1024px) {
-  .note {
-    flex-basis: calc(33.333% - 2rem);
-  }
-}
-
-@media (min-width: 1200px) {
-  .note {
-    max-width: 20rem;
-  }
-}
-
-/******************************************
-/* MENU STYLES
-/*******************************************/
-
-ul {
-  list-style: none;
-}
-
-.menu-link {
-  text-decoration: none;
-  color: black;
-}
-
-.menu-wrapper {
-  overflow: hidden;
-  width: 50px;
-  cursor: pointer;
-  border-radius: 50px;
-  margin: 20px;
-  background-color: white;
-}
-
-.menu-wrapper #hamburger-menu {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  margin: 15px;
-}
-
-.menu-wrapper #hamburger-menu span {
-  opacity: 1;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 2px;
-  border-radius: 10px;
-  color: black;
-  background-color: white;
-  position: absolute;
-  transform: rotate(0deg);
-  transition: 0.4s ease-in-out;
-}
-
-.menu-wrapper #hamburger-menu span:nth-child(1) {
-  background-color: rgba(110, 92, 157, 1);
-  top: 0;
-}
-.menu-wrapper #hamburger-menu span:nth-child(2) {
-  background-color: rgba(110, 92, 157, 1);
-  top: 9px;
-}
-.menu-wrapper #hamburger-menu span:nth-child(3) {
-  background-color: rgba(110, 92, 157, 1);
-  top: 18px;
-}
-.menu-wrapper #hamburger-menu.open span:nth-child(1) {
-  transform: translateY(9px) rotate(135deg);
-}
-.menu-wrapper #hamburger-menu.open span:nth-child(2) {
-  opacity: 0;
-  transform: translateX(-60px);
-}
-.menu-wrapper #hamburger-menu.open span:nth-child(3) {
-  transform: translateY(-9px) rotate(-135deg);
-}
-
-.menu-container .menu-list {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.menu-container .menu-list {
-  list-style: none;
-  padding-left: 0;
-  display: block;
-  position: absolute;
+  top: 110px;
   width: 100%;
   max-width: 200px;
   background: white;
@@ -1964,10 +1011,9 @@ ul {
 /* RESPONSIVE STYLES
 /*******************************************/
 
-/* General adjustments for smaller screens */
 @media (max-width: 767px) {
   body {
-    font-size: 55%; /* Adjust base font size for rem calculation if needed */
+    font-size: 55%;
   }
 
   h2 {
@@ -1975,7 +1021,6 @@ ul {
   }
 
   .homeTitleContainer {
-    font-size: 2.5rem;
     text-align: center;
   }
 
@@ -1992,7 +1037,7 @@ ul {
   }
 
   .homeBtns a {
-    margin: 1rem 0; /* Adjusted margin for stacked buttons */
+    margin: 1rem 0;
     text-align: center;
   }
 
@@ -2003,27 +1048,33 @@ ul {
     padding: 1.5rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    height: auto; /* Allow height to adjust to content */
+    height: auto;
   }
 
   .signupIcon {
-    margin: -2rem 0 1rem 0; /* Adjust icon margin */
+    margin: -2rem 0 1rem 0;
+    width: 13.8rem;
   }
 
   .icon {
     /* For login icon */
     margin: 1rem 0 1.5rem 0;
+    width: 13.8rem;
+  }
+
+  .homeIcon {
+    width: 13.8rem;
   }
 
   .signupFormInput,
   .loginFormInput {
     width: 100%;
-    font-size: 1.5rem; /* Adjust icon/input size */
+    font-size: 1.5rem;
   }
 
   input.signupFormBox,
   input.loginFormBox {
-    width: calc(100% - 40px); /* Adjust based on icon size and padding */
+    width: calc(100% - 40px);
   }
 
   input.signupFormBtn,
@@ -2036,8 +1087,8 @@ ul {
 
   /* Dashboard */
   .dash-content-bkgrnd {
-    width: 95%;
-    padding: 1rem;
+    width: 90%;
+    padding: 0.5rem;
     margin-bottom: 2rem;
   }
 
@@ -2049,7 +1100,7 @@ ul {
   }
 
   .dash-logo {
-    width: 15rem; /* Smaller logo */
+    width: 13.8rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     align-self: center;
@@ -2058,7 +1109,7 @@ ul {
   .dash-filter {
     flex-direction: column;
     align-items: stretch;
-    font-size: 1.5rem; /* Smaller filter text */
+    font-size: 1.5rem;
     margin-left: 0;
   }
 
@@ -2069,7 +1120,7 @@ ul {
   }
 
   .dashEmoji {
-    justify-content: center; /* Center emojis */
+    justify-content: center;
     flex-wrap: wrap;
   }
 
@@ -2078,118 +1129,110 @@ ul {
   }
 
   .dashEmoji .emojiLabel iconify-icon {
-    font-size: 3rem; /* Smaller emoji icons for filter */
+    font-size: 3rem;
   }
 
-  /* .note rule for max-width: 767px will cascade from the more general .note rule if not overridden here */
-  /* The existing .note rules start at min-width: 768px, so they won't apply here. */
-  /* We want notes to be full width on mobile */
   .note {
-    flex-basis: calc(100% - 2rem); /* ensure notes take full width on mobile */
-    min-width: unset; /* Remove min-width if it was set for larger screens */
+    width: calc(100% - 2rem);
   }
 
-  /* Journal Form */
   .journalForm {
     width: 90%;
-    margin: 2rem auto;
     padding: 1.5rem;
   }
 
   .entryIcon {
     margin: -2rem 0 1rem 0;
-    transform: scale(60%);
+    width: 13.8rem;
+    align-self: center;
   }
 
   .titlebar {
-    /* For journal entry page */
     flex-direction: column;
     align-items: center;
   }
 
   .entryTitle {
-    /* Journal entry title */
     font-size: 2rem;
     margin-bottom: 1rem;
   }
 
   .journalEmoji {
-    /* container for emoji selectors on journal page */
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 1rem;
   }
 
   .journalEmoji .emojiLabel iconify-icon {
-    /* individual emoji icons in journal page */
     font-size: 3.5rem;
   }
 
   .formInputs {
-    /* General class for date/title inputs in journal */
     width: 100%;
     margin-left: 0;
   }
 
   textarea {
-    /* Text area in journal */
     font-size: 1.2rem;
   }
 
   .journalInputs .submit {
-    /* Submit button in journal */
     width: 100%;
     text-align: center;
     margin-top: 1rem;
+    align-self: center;
   }
 
   /* Menu */
   #dashMenu {
-    /* Ensure menu icon container on dashboard is accessible */
     margin-left: 1rem;
     margin-top: 1rem;
   }
   #dashMenu .dashMenuWrapper {
-    /* Make sure it's on top */
     z-index: 1000;
   }
   .menu-wrapper {
-    /* General menu icon wrapper */
     margin: 10px;
   }
 
   .addEntryBtn {
-    /* floating action button */
     font-size: 3rem;
     bottom: 1rem;
     right: 1rem;
   }
 }
 
-/* Tablet adjustments */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) {
   body {
     font-size: 60%;
   }
 
+  .homepageHeader {
+    margin-bottom: 3rem;
+  }
+
+  .homepageBody {
+    gap: 2rem;
+  }
+
   .homeContainer {
-    width: 80%;
+    width: 40%;
     padding: 2rem;
   }
 
   .homeBtns a {
-    padding: 0.8rem 2rem; /* Slightly smaller buttons */
+    padding: 0.8rem 2rem;
   }
 
   .signupCard,
   .card {
-    width: 70%;
+    width: 30%;
     padding: 2rem;
   }
 
   .signupFormInput,
   .loginFormInput {
-    width: 80%; /* Allow some space */
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -2204,7 +1247,7 @@ ul {
   }
 
   .dash-filter {
-    font-size: 1.8rem; /* Adjust filter text size */
+    font-size: 1.8rem;
   }
 
   .dash-filter > span {
@@ -2213,32 +1256,33 @@ ul {
 
   .journalForm {
     width: 80%;
-    margin: 3rem auto;
+    margin: auto;
     padding: 2rem;
   }
 
   .entryTitle {
-    /* Journal entry title on tablet */
-    font-size: 2.2rem;
+    font-size: 3rem;
   }
 }
 
-/* These were mistakenly commented out in the previous step's overwrite. Restoring them. */
-@media (min-width: 768px) {
-  .note {
-    flex-basis: calc(50% - 2rem);
-  }
+.circle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(173, 144, 240, 1);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  color: rgba(173, 144, 240, 0.3);
 }
 
-@media (min-width: 1024px) {
-  .note {
-    flex-basis: calc(33.333% - 2rem);
-  }
+.circle-btn:hover {
+  transform: scale(1.1);
 }
 
-@media (min-width: 1200px) {
-  .note {
-    max-width: 310px;
-  }
+#addBtn {
+  font-size: 40px;
+  color: #ffffff;
 }
->>>>>>> e3cd31612194b782e9e1e0673f1eb647d01b2fd5
