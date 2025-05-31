@@ -6,7 +6,7 @@ const homeController = require('../controllers/home')
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 
-router.get('/', ensureAuth, homeController.getDashboard)
+router.get('/', ensureAuth, dashboardController.getEntries)
 router.get('/', ensureAuth, homeController.getJournal)
 router.post('/entry', dashboardController.createEntry)
 
