@@ -39,7 +39,7 @@ body {
      /* #321577, #44248E */
      background-size: 100%;
      font-size: 62.5%;
-     font-family: 'Poppin', sans-serif;
+     font-family: 'Poppins', sans-serif;
      /* margin: auto 25%; */
 }
 
@@ -528,17 +528,18 @@ DASHBOARD
 .note {
      font-size: 1rem;
      text-decoration: none;
-     line-height: 2.7rem;
+     line-height: 2.7rem; /* Restored for lined effect */
      width: 31rem;
-     height: 15rem;
+     height: auto; /* Keep from previous refinement */
+     min-height: 15rem; /* Keep from previous refinement */
      margin-right: 2rem;
      margin-bottom: 2rem;
-     background-color: rgba(173, 144, 240, .3);
-     background: repeating-linear-gradient(rgba(173, 144, 240, 1), rgba(173, 144, 240, 1) 2.5rem, rgba(255, 255, 255, .3) 2.6rem, rgba(255, 255, 255, .3) 2.7rem);
-     background-position-y: 49px;
-     /* background-color: #ad90f0; */
-     box-shadow: .4rem .4rem .4rem .1rem rgba(0, 0, 0, 0.2);
-     border-radius: 0 0 2rem 2rem;
+     background-color: rgba(173, 144, 240, .3); /* Restored original color */
+     background: repeating-linear-gradient(rgba(173, 144, 240, 1), rgba(173, 144, 240, 1) 2.5rem, rgba(255, 255, 255, .3) 2.6rem, rgba(255, 255, 255, .3) 2.7rem); /* Restored gradient */
+     background-position-y: 49px; /* Restored position for gradient */
+     box-shadow: 0 3px 6px rgba(0,0,0,0.1); /* New shadow from feedback */
+     border-radius: 1rem; /* New border-radius from feedback */
+     padding: 0; /* Remains, handled by inner elements */
 }
 
 .noteTitle {
@@ -787,6 +788,50 @@ footer {
 
 } */
 
+/* Overrides for .note elements - applied due to tool limitations */
+.noteTitle {
+    background-color: rgba(97, 75, 162, 1) !important; /* Ensure original color */
+    border-bottom: .4rem solid rgba(0, 0, 0, .5) !important; /* Ensure original border */
+    padding: 1rem !important; /* Ensure original padding */
+    /* height: 3rem; Ensure this is not overridden if it was part of the original .noteTitle and needed */
+}
+
+.noteTitle h3 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1.8rem !important;
+    /* width: 16rem; Ensure this is not overridden if it was part of the original and needed */
+}
+
+.noteText {
+    padding: 0.5rem 1rem !important;
+    margin-top: 0 !important;
+}
+
+.noteText p {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+}
+
+.noteDate { /* Assuming .noteDate is a new class for a div/p wrapping the date */
+    padding: 0 1rem 0.5rem 1rem !important;
+    margin-top: 0.5rem !important;
+}
+
+.noteDate p { /* Styling for a p tag specifically within .noteDate */
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 0.8rem !important;
+    color: #333 !important;
+    line-height: 1.2 !important; /* Adjusted for smaller font */
+    /* Resetting any specific text-overflow or clamping from .noteText p if necessary */
+    display: block !important;
+    -webkit-box-orient: unset !important;
+    -webkit-line-clamp: unset !important;
+    overflow: visible !important;
+}
+/* End of Overrides */
+
+/* Appended styles removed. Changes will be applied to original selectors. */
 /******************************************
 /* MENU STYLES
 /*******************************************/
