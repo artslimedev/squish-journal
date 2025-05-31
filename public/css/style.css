@@ -578,6 +578,7 @@ DASHBOARD
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
+  line-clamp: 4;
   overflow: hidden;
   font-family: "Reenie Beanie", cursive;
   font-size: 1.6rem;
@@ -841,6 +842,7 @@ div.noteTitle span.mood-icon-display iconify-icon {
   display: block !important;
   -webkit-box-orient: unset !important;
   -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
   overflow: visible !important;
   margin: 0 !important;
 }
