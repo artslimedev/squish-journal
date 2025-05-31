@@ -786,65 +786,64 @@ footer {
 
 } */
 
-.noteTitle {
-  background-color: transparent !important;
-
-  padding: 0 0 0.5rem 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  color: #333333 !important;
+.dash-content-bkgrnd .noteTitle {
+  background-color: transparent;
+  padding: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #333333;
 }
 
-.noteTitle h3 {
-  font-family: "Poppins", sans-serif !important;
-  font-size: 1.8rem !important;
-  color: #333333 !important;
-  width: auto !important;
-  margin: 0 !important;
+.dash-content-bkgrnd .noteTitle h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  color: #333333;
+  width: auto;
+  margin: 0;
 }
 
-div.noteTitle span.mood-icon-display {
-  margin-left: 0.5rem !important;
-  line-height: 1 !important;
+.dash-content-bkgrnd div.noteTitle span.mood-icon-display {
+  margin-left: 0.5rem;
+  line-height: 1;
 }
 
-div.noteTitle span.mood-icon-display iconify-icon {
-  color: #333333 !important;
-  font-size: 1.5rem !important;
-  vertical-align: middle !important;
+.dash-content-bkgrnd div.noteTitle span.mood-icon-display iconify-icon {
+  color: #333333;
+  font-size: 1.5rem;
+  vertical-align: middle;
 }
 
-.noteText {
-  padding: 0 !important;
-  margin-top: 0 !important;
-  color: #333333 !important;
+.dash-content-bkgrnd .noteText {
+  padding: 0;
+  margin-top: 0;
+  color: #333333;
 }
 
-.noteText p {
-  font-family: "Poppins", sans-serif !important;
-  font-size: 1rem !important;
-  line-height: 1.5 !important;
-  color: #333333 !important;
-  margin: 0 !important;
+.dash-content-bkgrnd .noteText p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333333;
+  margin: 0;
 }
 
-.noteDate {
-  padding: 0.5rem 0 0 0 !important;
-  margin-top: 0.5rem !important;
+.dash-content-bkgrnd .noteDate {
+  padding: 0.5rem 0 0 0;
+  margin-top: 0.5rem;
 }
 
-.noteDate p {
-  font-family: "Poppins", sans-serif !important;
-  font-size: 0.8rem !important;
-  color: #333 !important;
-  line-height: 1.2 !important;
-  display: block !important;
-  -webkit-box-orient: unset !important;
-  -webkit-line-clamp: unset !important;
-  line-clamp: unset !important;
-  overflow: visible !important;
-  margin: 0 !important;
+.dash-content-bkgrnd .noteDate p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  color: #333;
+  line-height: 1.2;
+  display: block;
+  -webkit-box-orient: unset;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  overflow: visible;
+  margin: 0;
 }
 
 @media (min-width: 768px) {
@@ -967,4 +966,267 @@ ul {
   font-size: 16px;
   position: relative;
   letter-spacing: 1px;
+}
+
+/******************************************
+/* RESPONSIVE STYLES
+/*******************************************/
+
+/* General adjustments for smaller screens */
+@media (max-width: 767px) {
+  body {
+    font-size: 55%; /* Adjust base font size for rem calculation if needed */
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .homeTitleContainer {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  /* Home Page */
+  .homeContainer {
+    width: 90%;
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
+
+  .homeBtns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .homeBtns a {
+    margin: 1rem 0; /* Adjusted margin for stacked buttons */
+    text-align: center;
+  }
+
+  /* Signup/Login Cards */
+  .signupCard, .card {
+    width: 90%;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    height: auto; /* Allow height to adjust to content */
+  }
+
+  .signupIcon {
+    margin: -2rem 0 1rem 0; /* Adjust icon margin */
+  }
+
+  .icon { /* For login icon */
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  .signupFormInput, .loginFormInput {
+    width: 100%;
+    font-size: 1.5rem; /* Adjust icon/input size */
+  }
+
+  input.signupFormBox, input.loginFormBox {
+    width: calc(100% - 40px); /* Adjust based on icon size and padding */
+  }
+
+  input.signupFormBtn, input.loginFormBtn, button.signupFormBtn, button.loginFormBtn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  /* Dashboard */
+  .dash-content-bkgrnd {
+    width: 95%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .dash-title > h2 {
+    font-size: 2.2rem;
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .dash-logo {
+    width: 15rem; /* Smaller logo */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-self: center;
+  }
+
+  .dash-filter {
+    flex-direction: column;
+    align-items: stretch;
+    font-size: 1.5rem; /* Smaller filter text */
+    margin-left: 0;
+  }
+
+  .dash-filter > span {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+  }
+
+  .dashEmoji {
+    justify-content: center; /* Center emojis */
+    flex-wrap: wrap;
+  }
+
+  .dashEmoji .emojiContainer {
+    margin: 0.5rem;
+  }
+
+  .dashEmoji .emojiLabel iconify-icon {
+    font-size: 3rem; /* Smaller emoji icons for filter */
+  }
+
+  /* .note rule for max-width: 767px will cascade from the more general .note rule if not overridden here */
+  /* The existing .note rules start at min-width: 768px, so they won't apply here. */
+  /* We want notes to be full width on mobile */
+   .note {
+    flex-basis: calc(100% - 2rem); /* ensure notes take full width on mobile */
+    min-width: unset; /* Remove min-width if it was set for larger screens */
+  }
+
+
+  /* Journal Form */
+  .journalForm {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 1.5rem;
+  }
+
+  .entryIcon {
+      margin: -2rem 0 1rem 0;
+      transform: scale(60%);
+  }
+
+  .titlebar { /* For journal entry page */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .entryTitle { /* Journal entry title */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .journalEmoji { /* container for emoji selectors on journal page */
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .journalEmoji .emojiLabel iconify-icon { /* individual emoji icons in journal page */
+    font-size: 3.5rem;
+  }
+
+  .formInputs { /* General class for date/title inputs in journal */
+      width: 100%;
+      margin-left: 0;
+  }
+
+  textarea { /* Text area in journal */
+      font-size: 1.2rem;
+  }
+
+  .journalInputs .submit { /* Submit button in journal */
+      width: 100%;
+      text-align: center;
+      margin-top: 1rem;
+  }
+
+  /* Menu */
+  #dashMenu { /* Ensure menu icon container on dashboard is accessible */
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+  #dashMenu .dashMenuWrapper { /* Make sure it's on top */
+    z-index: 1000;
+  }
+  .menu-wrapper { /* General menu icon wrapper */
+      margin: 10px;
+  }
+
+  .addEntryBtn { /* floating action button */
+    font-size: 3rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    font-size: 60%;
+  }
+
+  .homeContainer {
+    width: 80%;
+    padding: 2rem;
+  }
+
+  .homeBtns a {
+    padding: 0.8rem 2rem; /* Slightly smaller buttons */
+  }
+
+  .signupCard, .card {
+    width: 70%;
+    padding: 2rem;
+  }
+
+  .signupFormInput, .loginFormInput {
+    width: 80%; /* Allow some space */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .dash-content-bkgrnd {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .dash-title > h2 {
+    font-size: 2.5rem;
+  }
+
+  .dash-filter {
+      font-size: 1.8rem; /* Adjust filter text size */
+  }
+
+  .dash-filter > span {
+      font-size: 2.2rem;
+  }
+
+  .journalForm {
+    width: 80%;
+    margin: 3rem auto;
+    padding: 2rem;
+  }
+
+  .entryTitle { /* Journal entry title on tablet */
+    font-size: 2.2rem;
+  }
+}
+
+/* These were mistakenly commented out in the previous step's overwrite. Restoring them. */
+@media (min-width: 768px) {
+  .note {
+    flex-basis: calc(50% - 2rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .note {
+    flex-basis: calc(33.333% - 2rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .note {
+    max-width: 31rem;
+  }
 }

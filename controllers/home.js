@@ -3,13 +3,13 @@ const bcrypt = require('bcrypt')
 
 module.exports = {
     getIndex: (req,res)=>{
-        res.render('index.ejs')
+        res.render('index.ejs', { user: req.user })
     },
     getDashboard: (req,res)=>{
         res.render('dashboard.ejs')
     },
     getJournal: (req,res)=>{
-        res.render('journal.ejs')
+        res.render('journal.ejs', { user: req.user })
     },
     createEntry: async (req, res)=>{
         try{
