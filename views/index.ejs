@@ -1,132 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
+  <head>
     <!-- META TAGS-->
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Squish</title>
 
     <!-- LINKS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap" rel="stylesheet">
-    
-     <link rel="stylesheet" href="/css/reset.css">
-     <link rel="stylesheet" href="/css/style.css">
- 
-     <!-- SCRIPTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap"
+      rel="stylesheet"
+    />
 
-     <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-     <script src="/js/menu.js"></script>
-   
- 
-</head>
-<body>
-  
-  <!-- HAMBURGER MENU -->
-  <div class="menu-container">
-        
-    <div class="menu-wrapper">    
-       <div id="hamburger-menu">   
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- SCRIPTS -->
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/js/menu.js"></script>
+  </head>
+  <body>
+    <div class="homepageHeader">
+      <!-- HAMBURGER MENU -->
+
+      <div class="menu-container">
+        <div class="menu-wrapper">
+          <div id="hamburger-menu">
             <span></span>
             <span></span>
-            <span></span>   
-        </div>    
-       <!-- hamburger-menu -->    
-    </div>   
-    <!-- menu-wrapper -->
+            <span></span>
+          </div>
+          <!-- hamburger-menu -->
+        </div>
+        <!-- menu-wrapper -->
 
-    <ul class="menu-list accordion">    
-       <li class="accordion-toggle nav1">     
-          <a class="menu-link" href="/">Home</a>   
-       </li>
-       <% if (typeof user !== 'undefined' && user) { %>
-        <li class="accordion-toggle nav2">
-          <a class="menu-link" href="/dashboard">Dashboard</a>
-        </li>
-        <li class="toggle accordion-toggle nav3">   
-          <a class="menu-link" href="/journal">Journal</a>  
-        </li>     
-        <li class="toggle accordion-toggle nav5">
-          <a class="menu-link" href="/logout">Logout</a>
-        </li>
-       <% } else { %>
-        <li class="toggle accordion-toggle nav3">
-          <a class="menu-link" href="/journal">Journal</a>
-        </li>
-        <li class="toggle accordion-toggle nav4">    
-          <a class="menu-link" href="/signup">Signup</a>             
-        </li>
-        <li class="toggle accordion-toggle nav5">
-          <a class="menu-link" href="/login">Login</a>
-        </li>
-       <% } %>
-    </ul>
- 
- </div>
+        <ul class="menu-list accordion">
+          <li class="accordion-toggle nav1">
+            <a class="menu-link" href="/">Home</a>
+          </li>
+          <% if (typeof user !== 'undefined' && user) { %>
+          <li class="accordion-toggle nav2">
+            <a class="menu-link" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="toggle accordion-toggle nav3">
+            <a class="menu-link" href="/journal">Journal</a>
+          </li>
+          <li class="toggle accordion-toggle nav5">
+            <a class="menu-link" href="/logout">Logout</a>
+          </li>
+          <% } else { %>
+          <li class="toggle accordion-toggle nav3">
+            <a class="menu-link" href="/journal">Journal</a>
+          </li>
+          <li class="toggle accordion-toggle nav4">
+            <a class="menu-link" href="/signup">Signup</a>
+          </li>
+          <li class="toggle accordion-toggle nav5">
+            <a class="menu-link" href="/login">Login</a>
+          </li>
+          <% } %>
+        </ul>
+      </div>
 
-  <!-- LOGIN BODY -->
+      <!-- LOGIN BODY -->
 
-
-  <!--ICON-->
-    <div class="icon homeIcon">
-      <img src="/images/Default.png" alt="squish-icon">
-      
+      <!--ICON-->
+      <div class="icon homeIcon">
+        <img src="/images/Default.png" alt="squish-icon" />
+      </div>
     </div>
 
-    <div class="homeTitleContainer">
-        <h1 class="homeTitle">
-            Welcome! Come in and unwind!
-        </h1>
-    </div>
+    <div class="homepageBody">
+      <div class="homeTitleContainer">
+        <h1 class="homeTitle">Welcome! Come in and unwind!</h1>
+      </div>
 
-    <div class="homeContainer">
-
+      <div class="homeContainer">
         <p class="homeText">
-            This is <span>Squish</span>! Your own private journal. We all have had long days, whether it's due to work or family. All of these things can build up over time and cause the mind to get extremly heave and clouded. The purpose of Squish is to be your stress ball, a tool for you to take out your frustrations or just decompress and reflect on your day. We recommend that once a day, in the evening, you take some time out to have a session where you brain dump whatever's on your mind. So sign up and let's clear your mind!
+          This is <span>Squish</span>! Your own private journal. We all have had
+          long days, whether it's due to work or family. All of these things can
+          build up over time and cause the mind to get extremly heave and
+          clouded. The purpose of Squish is to be your stress ball, a tool for
+          you to take out your frustrations or just decompress and reflect on
+          your day. We recommend that once a day, in the evening, you take some
+          time out to have a session where you brain dump whatever's on your
+          mind. So sign up and let's clear your mind!
         </p>
 
         <div class="homeBtns">
           <% if (typeof user !== 'undefined' && user) { %>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/logout">Logout</a>
+          <a href="/dashboard">Dashboard</a>
+          <a href="/logout">Logout</a>
           <% } else { %>
-            <a href="/signup">Signup</a>
-            <a href="/login">Login</a>
+          <a href="/signup">Signup</a>
+          <a href="/login">Login</a>
           <% } %>
         </div>
-
-
+      </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--------------------------------------------- 
+    <!--------------------------------------------- 
 
 
 
@@ -135,8 +115,6 @@ LOGIN STUFF IS BELOW HERE NOT FOR THE HOME PAGE
 
  ---------------------------------------------->
 
-
-    
     <!-- LOGIN -->
 
     <!-- <div class="cardContainer">
@@ -220,7 +198,5 @@ LOGIN STUFF IS BELOW HERE NOT FOR THE HOME PAGE
         </div>
 
     </div> -->
-    
-  
-</body>
+  </body>
 </html>

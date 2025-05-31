@@ -34,6 +34,7 @@ body {
 }
 
 body {
+  min-height: 100vh;
   background-image: linear-gradient(to bottom right, #a88beb, #512aa9);
   background-color: transparent;
   /* background-image:linear-gradient(to right bottom, rgb(50, 21, 119), rgb(68, 36, 142)) */
@@ -76,22 +77,37 @@ a {
 /* HOME PAGE
 /*******************************************/
 
+.homepageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem 0;
+  margin-bottom: 1rem;
+}
+
 div.homeIcon {
   display: flex;
   justify-content: center;
-  margin: -2rem 0 2rem 0;
-  width: 18.4rem; /* Standardized width */
+  align-items: flex-end;
+}
+
+.homepageBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
 .homeTitle {
   color: white;
+  font-size: 1.5rem;
 }
 
 .homeTitleContainer {
   display: flex;
   justify-content: center;
-  margin: 0 0 3rem 0;
-  font-size: 3rem;
+  margin: 0 0 0.5rem 0;
 }
 
 .homeContainer {
@@ -263,7 +279,6 @@ button.signupFormBtn:hover {
 .icon {
   display: flex;
   justify-content: center;
-  margin: -2rem 0 3rem 0;
   width: 18.4rem; /* Standardized width */
 }
 
@@ -374,7 +389,27 @@ DASHBOARD
   top: 7rem;
 }
 
-.dash-container {
+.dashHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.dashIcon {
+  margin-left: auto;
+  height: 80px;
+}
+
+.dashIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dash-container,
+.formPage {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -391,8 +426,7 @@ DASHBOARD
 }
 .titleLogo {
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  align-items: center;
 }
 
 .dash-title {
@@ -410,11 +444,7 @@ DASHBOARD
 }
 
 .dash-logo {
-  width: 18.4rem; /* Changed from 23rem */
-  display: flex;
-  align-self: flex-end; /* Changed back to flex-end */
-  margin-top: -2rem;
-  margin-bottom: 1.5rem;
+  margin: 0;
 }
 
 /* Removed individual .dash-logo img rule, consolidated below */
@@ -463,9 +493,7 @@ DASHBOARD
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   padding: 1rem;
-  flex-grow: 1; /* Kept as per analysis */
-  flex-shrink: 0; /* Changed */
-  width: 300px; /* Added */
+  flex: 1 1 100%; /* Allow full width and growth on mobile */
 }
 
 .noteBody {
@@ -486,6 +514,7 @@ DASHBOARD
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  min-height: 12rem; /* Added min-height to ensure consistent spacing */
 }
 
 .noteTitle {
@@ -528,6 +557,69 @@ DASHBOARD
 
 .note a {
   text-decoration: none;
+}
+
+/* Increase specificity for note components */
+.noteDescription .noteTitle {
+  background-color: transparent;
+  padding: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #333333;
+}
+
+.noteDescription .noteTitle h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  color: #333333;
+  width: auto;
+  margin: 0;
+}
+
+.noteDescription .noteTitle span.mood-icon-display {
+  margin-left: 0.5rem;
+  line-height: 1;
+}
+
+.noteDescription .noteTitle span.mood-icon-display iconify-icon {
+  color: #333333;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.noteDescription .noteText {
+  padding: 0;
+  margin-top: 0;
+  color: #333333;
+}
+
+.noteDescription .noteText p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333333;
+  margin: 0;
+}
+
+.noteDescription .noteDate {
+  padding: 0.5rem 0 0 0;
+  margin-top: auto;
+  margin-bottom: 0;
+  justify-self: flex-end;
+}
+
+.noteDescription .noteDate p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  color: #333;
+  line-height: 1.2;
+  display: block;
+  -webkit-box-orient: unset;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  overflow: visible;
+  margin: 0;
 }
 
 /* Consolidated responsive image styles for logos */
@@ -573,28 +665,30 @@ DASHBOARD
 
 .addEntryBtn {
   position: fixed;
-  font-size: 4rem;
   bottom: 2rem;
   right: 3rem;
   z-index: 1;
 }
 
 .addEntryBtn #addBtn {
-  color: white;
+  color: #ffffff;
 }
 
 /******************************************
 /* JOURNAL STYLES
 /*******************************************/
 
-.formPage {
-  margin: auto;
+.journalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
 }
 
 .entryIcon {
   display: flex;
   justify-content: center;
-  margin: -5rem 0 1rem 0;
   width: 18.4rem; /* Standardized width */
 }
 
@@ -608,6 +702,9 @@ DASHBOARD
   box-shadow: rgba(100, 100, 100, 0.2) 6px 2px 10px;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 700px; /* Optional: set maximum width for very large screens */
+  margin: 0 auto;
 }
 
 label {
@@ -653,6 +750,7 @@ textarea {
   background-color: rgba(197, 197, 197, 0.535);
   font-size: 1rem;
   width: 100%;
+  height: 140px;
   border-radius: 20px;
   border: none;
   padding: 10px;
@@ -781,7 +879,9 @@ div.noteTitle span.mood-icon-display iconify-icon {
 
 .noteDate {
   padding: 0.5rem 0 0 0 !important;
-  margin-top: 0.5rem !important;
+  margin-top: auto !important; /* Changed from 0.5rem to auto */
+  margin-bottom: 0 !important;
+  justify-self: flex-end;
 }
 
 .noteDate p {
@@ -797,22 +897,28 @@ div.noteTitle span.mood-icon-display iconify-icon {
   margin: 0 !important;
 }
 
+/* Add this new container at the top of your styles */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+/* Modify existing menu-container */
+.menu-container {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
 /* Media queries for .note from HEAD version */
 @media (min-width: 768px) {
   .note {
-    /* flex-basis removed, width: 300px applies */
-  }
-}
-
-@media (min-width: 1024px) {
-  .note {
-    /* flex-basis removed, width: 300px applies */
-  }
-}
-
-@media (min-width: 1200px) {
-  .note {
-    /* max-width removed, width: 300px applies */
+    width: 300px; /* Fixed width */
+    flex: 0 0 300px; /* Don't grow or shrink */
+    margin: 1rem; /* Keep existing margin */
   }
 }
 
@@ -834,7 +940,6 @@ ul {
   width: 50px;
   cursor: pointer;
   border-radius: 50px;
-  margin: 20px;
   background-color: white;
 }
 
@@ -889,6 +994,7 @@ ul {
   padding-left: 0;
   display: block;
   position: absolute;
+  top: 110px;
   width: 100%;
   max-width: 200px;
   background: white;
@@ -933,7 +1039,6 @@ ul {
   }
 
   .homeTitleContainer {
-    font-size: 2.5rem;
     text-align: center;
   }
 
@@ -975,11 +1080,11 @@ ul {
     width: 13.8rem; /* Standardized width for mobile */
   }
 
-  .homeIcon { /* Standardized width for mobile */
+  .homeIcon {
+    /* Standardized width for mobile */
     width: 13.8rem;
     /* Retain existing margin or adjust if necessary, current mobile margin is implicitly inherited or 0 if overridden by * reset */
     /* The desktop margin: -2rem 0 2rem 0; might be too much for mobile if not overridden by a more general rule. */
-    /* For now, only setting width as per instruction. */
   }
 
   .signupFormInput,
@@ -1048,7 +1153,8 @@ ul {
     font-size: 3rem; /* Smaller emoji icons for filter */
   }
 
-  .note { /* On mobile, ensure note takes full width, min-width from larger screens is overridden */
+  .note {
+    /* On mobile, ensure note takes full width, min-width from larger screens is overridden */
     width: calc(100% - 2rem); /* Account for margin: 1rem on left and right */
     /* The global 'margin: 1rem;' will still apply. */
     /* No need for margin-left/right: auto due to flex container and width setting. */
@@ -1057,13 +1163,13 @@ ul {
   /* Journal Form */
   .journalForm {
     width: 90%;
-    margin: 2rem auto;
     padding: 1.5rem;
   }
 
   .entryIcon {
     margin: -2rem 0 1rem 0;
     width: 13.8rem; /* Standardized width for mobile */
+    align-self: center;
   }
 
   .titlebar {
@@ -1106,6 +1212,7 @@ ul {
     width: 100%;
     text-align: center;
     margin-top: 1rem;
+    align-self: center;
   }
 
   /* Menu */
@@ -1132,13 +1239,21 @@ ul {
 }
 
 /* Tablet adjustments */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) {
   body {
     font-size: 60%;
   }
 
+  .homepageHeader {
+    margin-bottom: 3rem;
+  }
+
+  .homepageBody {
+    gap: 2rem; /* Add gap between elements */
+  }
+
   .homeContainer {
-    width: 80%;
+    width: 40%;
     padding: 2rem;
   }
 
@@ -1178,13 +1293,13 @@ ul {
 
   .journalForm {
     width: 80%;
-    margin: 3rem auto;
+    margin: auto;
     padding: 2rem;
   }
 
   .entryTitle {
     /* Journal entry title on tablet */
-    font-size: 2.2rem;
+    font-size: 3rem;
   }
   /* .note media queries for this range (768px-1023px) are already defined by HEAD version above */
 }
@@ -1193,3 +1308,24 @@ ul {
 /* The e3cd316 branch also had these at the end of its responsive styles, essentially duplicating them. */
 /* We rely on the ones defined above from HEAD for .note responsiveness. */
 /* No other specific overrides from e3cd316 for 1024px+ are present in its responsive block beyond .note */
+.circle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(173, 144, 240, 1);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  color: rgba(173, 144, 240, 0.3);
+}
+
+.circle-btn:hover {
+  transform: scale(1.1);
+}
+
+#addBtn {
+  font-size: 40px;
+  color: #ffffff;
+}

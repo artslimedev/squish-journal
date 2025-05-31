@@ -29,52 +29,50 @@
   </head>
 
   <body>
-    <!-- HAMBURGER MENU -->
-    <div class="menu-container" id="dashMenu">
-      <div class="menu-wrapper dashMenuWrapper">
-        <div id="hamburger-menu">
-          <span></span>
-          <span></span>
-          <span></span>
+    <div class="dashHeader">
+      <!-- HAMBURGER MENU -->
+      <div class="menu-container">
+        <div class="menu-wrapper">
+          <div id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
-        <!-- hamburger-menu -->
-      </div>
-      <!-- menu-wrapper -->
 
-      <ul class="menu-list accordion dashMenuList">
-        <li class="accordion-toggle nav1">
-          <a class="menu-link" href="/">Home</a>
-        </li>
-        <% if (typeof user !== 'undefined' && user) { %>
-        <li class="accordion-toggle nav2">
-          <a class="menu-link" href="/dashboard">Dashboard</a>
-        </li>
-        <li class="toggle accordion-toggle nav3">
-          <a class="menu-link" href="/journal">Journal</a>
-        </li>
-        <li class="toggle accordion-toggle nav4">
-          <a class="menu-link" href="/logout">Logout</a>
-        </li>
-        <% } else { %>
-        <li class="toggle accordion-toggle nav4">
-          <a class="menu-link" href="/signup">Signup</a>
-        </li>
-        <li class="toggle accordion-toggle nav5">
-          <a class="menu-link" href="/login">Login</a>
-        </li>
-        <% } %>
-      </ul>
+        <ul class="menu-list accordion">
+          <li class="accordion-toggle nav1">
+            <a class="menu-link" href="/">Home</a>
+          </li>
+          <% if (typeof user !== 'undefined' && user) { %>
+          <li class="accordion-toggle nav2">
+            <a class="menu-link" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="toggle accordion-toggle nav3">
+            <a class="menu-link" href="/journal">Journal</a>
+          </li>
+          <li class="toggle accordion-toggle nav4">
+            <a class="menu-link" href="/logout">Logout</a>
+          </li>
+          <% } else { %>
+          <li class="toggle accordion-toggle nav4">
+            <a class="menu-link" href="/signup">Signup</a>
+          </li>
+          <li class="toggle accordion-toggle nav5">
+            <a class="menu-link" href="/login">Login</a>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+      <!-- HAMBURGER MENU-->
+      <div class="icon dashIcon">
+        <img src="../images/Default.png" alt="squish-icon" />
+      </div>
     </div>
-    <!-- HAMBURGER MENU-->
 
     <div class="dash-container">
       <section class="dash-body">
         <!-- DASHBOARD BODY -->
-        <div class="titleLogo">
-          <div class="dash-logo">
-            <img src="../images/Default.png" alt="logo" />
-          </div>
-        </div>
 
         <div class="dash-content-bkgrnd">
           <form method="GET" action="/dashboard">
@@ -226,9 +224,9 @@
 
     <div class="addEntryBtn">
       <span>
-        <a href="/journal"
-          ><iconify-icon icon="fa:plus-circle" id="addBtn"></iconify-icon
-        ></a>
+        <a href="/journal" class="circle-btn">
+          <iconify-icon icon="fa:plus-circle" id="addBtn"></iconify-icon>
+        </a>
       </span>
     </div>
   </body>
