@@ -3,3 +3,4 @@ node_modules
 .env
 utils/generateKey.js
 utils/migrateEncryption.js
+READMEOld.md

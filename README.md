@@ -1,30 +1,126 @@
-# Squish Mental Journal
+# 🧠 Squish Mental Journal
 
-This app is a journal for the ones with the busiest hectic lives. It was made as a tool to decompress and spill your thoughts into a journal daily. It includes login/sign up and stores your entries in a database.
+**Squish Journal** is a journal for the ones with the busiest, most hectic lives. It was made as a tool to decompress and spill your thoughts into a journal daily. It includes login/sign up and stores your entries in a secure database.
 
-**Link to project: [Squish](https://squish-production.up.railway.app/)**
+🔗 **Live App**: [Squish](https://squish-production.up.railway.app/)
 
 <img src="public/images/app.png" height="300" alt="Squish App Screenshot"> <img src="public/images/app2.png" height="300" alt="Squish App Screenshot">
 
-## How It's Made:
+---
 
-**Tech used:** HTML, CSS, JavaScript, Node.js, EJS, Express, Passport, MongoDB
+## 🛠️ How It's Made
 
-I really wanted to build a journal as a place for people to unwind and let go of things that have been stressing them. So with that in mind I wanted to make sure anyone in my audience would be able to see and use the app. The first thing I did was try to choose a color pallete for the branding of the app. As a designer, I am very particular about UX/UI. Any app I build has to be beautiful and easy to experience by anyone. So the main point of my research into color and branding was accessibility. I decided to research what colors are are affected by color blindness and what colors stay true no matter the condition. I saw that most people who experience color blindness are able to still recognize shades of blue/purple so I went with that and started designing the UI in Figma. Once I had my layouts done I started to code them in HTML & CSS with plans to convert the HTML to EJS. The next thing was to set up my MVC environment for the backend. I set up my models, views, controllers, and routes folders to be able to set up the connections in an organized fashion. Using Node.js & Express I was able to route all my end points as well as inplement user authentication through Passport. I also was able to send GET & POST requests to the Mongo database I created.
+## 🛠️ Technologies Used
 
-## Optimizations
+### Frontend
+- HTML
+- CSS
+- JavaScript
+- EJS (Embedded JavaScript Templates) – for server-side rendering
 
-This is the first time I've used Figma as a tool for building an app and it made a huge difference in the outcome. Being able to see, visualize and use the UI before even setting up the code, made it very easy to see what would work well and what may not be as goood of an idea as it was in my mind. Also able to set what UI aspects may or may not be functional to use.
+### Backend
+- Node.js – JavaScript runtime environment
+- Express.js – Web framework for Node.js
+- MongoDB – NoSQL database for storing journal entries and user data
+- Mongoose – ODM (Object Data Modeling) library for MongoDB and Node.js
 
-## Lessons Learned:
+### Authentication
+- Passport.js – Middleware for user authentication
+- bcrypt – Library for hashing passwords
 
-This project really put me through the ringer as this is my biggest one thus far. Implementing user authentication, and setting up routes to and from as many as 5 different pages and creating a path to make requests to and from the database has taught me a lot. I have become a lot more familiar with the MVC architecture and allowing users to create private databases of their information.
+### Deployment
+- Railway – Cloud deployment platform
 
-## Upcoming Featurs:
+---
 
-- Global site music player
-- Dark Mode
-- Notes sorting by date and emotion
-- Pagination
-- User settings
-- Edit and Delete notes
+I really wanted to build a journal as a place for people to unwind and let go of things that have been stressing them. So with that in mind, I made sure the app would be accessible and simple enough for anyone to use. As a designer, I’m very particular about UX/UI—any app I build has to be beautiful and intuitive.
+
+The first step was choosing a color palette. I did a deep dive into accessibility, especially for users who are color blind. I found that shades of blue and purple tend to be reliably perceived across various forms of color blindness, so I leaned into those and built the UI in Figma first.
+
+Once I had my designs locked in, I coded the layouts in HTML & CSS and converted them into EJS for templating. I structured the backend with an MVC pattern—organizing models, views, controllers, and routes. Using Node.js and Express, I built out all my endpoints, implemented authentication with Passport, and connected everything to a MongoDB database using Mongoose.
+
+---
+
+## ✨ Features
+
+- User Authentication (Register/Login)
+- Secure session handling
+- Daily Journal Entries (Create, Read, Delete)
+- Beautiful, responsive design optimized for accessibility
+- Built with an MVC architecture for scalability
+- Production deployment using Railway
+
+---
+
+## 📁 Project Structure
+
+```
+squish-journal/
+├── config/             # Configuration files (e.g., database, passport)
+├── controllers/        # Route handler functions
+├── images/             # Static image assets
+├── middleware/         # Custom middleware functions
+├── models/             # Mongoose models (User, Entry)
+├── public/             # Public assets (CSS, client-side JS)
+├── routes/             # Express route definitions
+├── utils/              # Utility functions
+├── views/              # EJS templates for rendering pages
+├── server.js           # Entry point of the application
+├── package.json        # Project metadata and dependencies
+└── README.md           # Project documentation
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v14 or higher)
+- MongoDB (local or Atlas)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/artslimedev/squish-journal.git
+   cd squish-journal
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+
+   Create a `.env` file in the root directory and add:
+   ```env
+   PORT=3000
+   MONGODB_URI=your_mongodb_connection_string
+   SESSION_SECRET=your_session_secret
+   ```
+
+4. **Start the development server**
+   ```bash
+   npm start
+   ```
+
+   Open your browser and go to: `http://localhost:3000`
+
+---
+
+## 🔧 Optimizations
+
+This was my first time using Figma to design a full app before writing any code—and it made a huge difference. Being able to interact with the UI beforehand helped me identify what would actually work and what needed rethinking. I also explored which design elements were practical to implement and which weren't, saving time in development.
+
+---
+
+## 📚 Lessons Learned
+
+This is the most ambitious project I’ve built so far. I learned a lot about implementing authentication, setting up multiple routes, and managing connections to and from a database. It really solidified my understanding of the MVC architecture and gave me hands-on experience building a system where users can create private entries securely.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
