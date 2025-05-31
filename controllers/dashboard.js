@@ -1,18 +1,50 @@
 const Entry = require('../models/Entry')
+const { encrypt, decrypt } = require('../utils/encryption')
 
 module.exports = {
     createEntry: async (req, res) => {
-        try{
-            await Entry.create({entry: req.body.entryItem, date: req.body.dateItem, title: req.body.titleItem, userId: req.user.id})
-            console.log('Entry has been added!')
-            res.redirect('/dashboard')
-        }catch(err){
-            console.log(err)
+        try {
+            // Input validation
+            const { entryItem, dateItem, titleItem, moodItem } = req.body;
+            if (!entryItem || !dateItem || !titleItem) {
+                return res.status(400).json({ 
+                    error: 'Missing required fields' 
+                });
+            }
+
+            // Encrypt the entry content before saving
+            let encryptedEntry;
+            try {
+                encryptedEntry = encrypt(entryItem);
+            } catch (encryptError) {
+                console.error('Encryption failed:', encryptError);
+                return res.status(500).json({
+                    error: 'Encryption failed',
+                    message: process.env.NODE_ENV === 'development' ? encryptError.message : 'Internal server error'
+                });
+            }
+
+            const entry = await Entry.create({
+                entry: encryptedEntry,
+                date: dateItem,
+                title: titleItem,
+                mood: moodItem,
+                userId: req.user.id
+            });
+
+            console.log(`Entry created successfully with ID: ${entry._id}`);
+            return res.redirect('/dashboard');
+
+        } catch (err) {
+            console.error('Error creating entry:', err);
+            return res.status(500).json({
+                error: 'Failed to create entry',
+                message: process.env.NODE_ENV === 'development' ? err.message : 'Internal server error'
+            });
         }
     },
-    getEntries: async (req,res)=>{
-        console.log(req.user)
-        try{
+    getEntries: async (req, res) => {
+        try {
             let filterQuery = { userId: req.user.id };
 
             if (req.query.mood) {
@@ -23,23 +55,38 @@ module.exports = {
                 }
             }
 
-            const entryItems = await Entry.find(filterQuery)
-            const itemsTotal = await Entry.countDocuments(filterQuery)
+            const entryItems = await Entry.find(filterQuery);
+            const decryptedEntries = entryItems.map(entry => {
+                const entryObj = entry.toObject();
+                try {
+                    // Attempt to decrypt the entry
+                    if (entryObj.entry && entryObj.entry.includes(':')) {
+                        entryObj.entry = decrypt(entryObj.entry);
+                    }
+                    // If entry doesn't contain ':' it's likely not encrypted
+                    return entryObj;
+                } catch (decryptError) {
+                    console.error(`Failed to decrypt entry ${entry._id}:`, decryptError);
+                    // Return the original entry if decryption fails
+                    return entryObj;
+                }
+            });
 
-            let currentMoods = req.query.mood || [];
-            if (typeof currentMoods === 'string') {
-                currentMoods = [currentMoods];
-            }
+            const itemsTotal = await Entry.countDocuments(filterQuery);
+            const currentMoods = Array.isArray(req.query.mood) ? req.query.mood : [req.query.mood].filter(Boolean);
 
-            res.render('dashboard.ejs', {
-                entries: entryItems,
+            return res.render('dashboard.ejs', {
+                entries: decryptedEntries,
                 total: itemsTotal,
                 user: req.user,
-                currentMoods: currentMoods
-            })
-        }catch(err){
-            console.log(err)
+                currentMoods
+            });
+        } catch (err) {
+            console.error('Error fetching entries:', err);
+            return res.status(500).json({ 
+                error: 'Failed to fetch entries',
+                message: process.env.NODE_ENV === 'development' ? err.message : 'Internal server error'
+            });
         }
     }
-
 }

@@ -1,3 +1,5 @@
 node_modules
 .vscode/*
 .env
+utils/generateKey.js
+utils/migrateEncryption.js
