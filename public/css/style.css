@@ -529,17 +529,22 @@ DASHBOARD
      font-size: 1rem;
      text-decoration: none;
      line-height: normal; /* Removed specific line height for lines */
-     width: 31rem;
+     /* width: 31rem; */ /* Removed for flex */
      height: auto; /* Keep from previous refinement */
      min-height: 15rem; /* Keep from previous refinement */
-     margin-right: 2rem;
-     margin-bottom: 2rem;
+     /* margin-right: 2rem; */ /* Removed for uniform margin */
+     margin-bottom: 2rem; /* Kept bottom margin, will be part of overall margin: 1rem; */
+     margin: 1rem; /* Uniform margin */
      background-color: rgba(173, 144, 240, .3); /* Original color remains */
      /* background: repeating-linear-gradient(...) removed */
      /* background-position-y: 1rem; removed */
      box-shadow: 2px 2px 5px rgba(0,0,0,0.15); /* New sticky-note shadow */
      border-radius: 4px; /* New sticky-note border-radius */
      padding: 1rem; /* Added global padding */
+     flex-grow: 1;
+     flex-shrink: 1;
+     flex-basis: calc(100% - 2rem); /* Default full width minus margins */
+     min-width: 280px; /* Minimum width before wrapping */
 }
 
 .noteTitle {
@@ -585,17 +590,17 @@ DASHBOARD
 
  .dash-images{
      display: flex;
-     justify-content: center;
-     align-items: center;
+     justify-content: flex-start; /* Changed from center */
+     align-items: center; /* Kept for now */
      flex-wrap: wrap;
  }
  .dash-row {
-     display: flex;
-     flex-direction: row;
-     justify-content: center;
-     align-items: center;
-     width: 100%;
-     margin-left: 1.7rem;
+     display: contents; /* Changed from flex */
+     /* flex-direction: row; removed */
+     /* justify-content: center; removed */
+     /* align-items: center; removed */
+     /* width: 100%; removed */
+     /* margin-left: 1.7rem; removed */
  }
 .dash-all-buttons{
      display: flex;
@@ -790,67 +795,93 @@ footer {
 
 /* Overrides for .note elements - applied due to tool limitations */
 .noteTitle {
-    background-color: transparent !important; /* Made transparent for sticky note look */
-    /* border-bottom: .4rem solid rgba(0, 0, 0, .5) !important; */ /* Removed border */
-    padding: 0 0 0.5rem 0 !important; /* New padding (top, right, bottom, left) */
-    /* height: 3rem; Ensure this is not overridden if it was part of the original .noteTitle and needed */
-    display: flex !important; /* Ensure flex properties for alignment */
-    align-items: center !important; /* Align items vertically */
-    justify-content: space-between !important; /* Push title and icon apart if h3 is not full width */
+    background-color: transparent !important;
+    /* border-bottom removed */
+    padding: 0 0 0.5rem 0 !important; /* T R B L */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    color: #333333 !important; /* Default color for title area */
 }
 
 .noteTitle h3 {
     font-family: 'Poppins', sans-serif !important;
     font-size: 1.8rem !important;
-    color: #333333 !important; /* New text color */
-    /* width: 16rem; Ensure this is not overridden if it was part of the original and needed */
-    /* flex-grow: 1; /* Allow h3 to take space if needed, ensure mood icon is visible */
+    color: #333333 !important;
+    width: auto !important; /* Allow natural width */
+    margin: 0 !important; /* Reset margin */
+    /* flex-grow: 1; */ /* Removed to prevent h3 from pushing icon too far if not needed */
 }
 
 div.noteTitle span.mood-icon-display {
-    margin-left: 0.5rem !important; /* Space between title h3 and icon */
-    line-height: 1 !important; /* To help with vertical alignment if needed */
+    margin-left: 0.5rem !important;
+    line-height: 1 !important;
 }
 
 div.noteTitle span.mood-icon-display iconify-icon {
-    color: #333333 !important; /* New icon color */
-    font-size: 1.5rem !important; /* Adjust size relative to title font (1.8rem for h3) */
-    vertical-align: middle !important; /* Another alignment aid */
+    color: #333333 !important;
+    font-size: 1.5rem !important;
+    vertical-align: middle !important;
 }
 
 .noteText {
-    padding: 0 !important; /* New padding, main .note padding will handle spacing */
+    padding: 0 !important;
     margin-top: 0 !important;
+    color: #333333 !important; /* Default color for text area */
 }
 
 .noteText p {
     font-family: 'Poppins', sans-serif !important;
     font-size: 1rem !important;
-    line-height: 1.5 !important; /* Adjusted line-height */
-    color: #333333 !important; /* Ensuring note text is also dark for readability */
+    line-height: 1.5 !important;
+    color: #333333 !important;
+    margin: 0 !important; /* Reset margin */
 }
 
-.noteDate { /* Assuming .noteDate is a new class for a div/p wrapping the date */
-    /* padding: 0 1rem 0.5rem 1rem !important; */ /* Old padding */
-    padding: 0.5rem 0 0 0 !important; /* New padding, space above date, relies on .note padding for L/R */
-    margin-top: 0.5rem !important; /* This might be redundant if .noteDate p has margin-top */
+.noteDate {
+    padding: 0.5rem 0 0 0 !important; /* Space above date */
+    margin-top: 0.5rem !important; /* Keep or adjust based on visual */
 }
 
-.noteDate p { /* Styling for a p tag specifically within .noteDate */
+.noteDate p {
     font-family: 'Poppins', sans-serif !important;
     font-size: 0.8rem !important;
     color: #333 !important;
-    line-height: 1.2 !important; /* Adjusted for smaller font */
-    /* Resetting any specific text-overflow or clamping from .noteText p if necessary */
+    line-height: 1.2 !important;
     display: block !important;
     -webkit-box-orient: unset !important;
     -webkit-line-clamp: unset !important;
     overflow: visible !important;
-    margin-top: 0; /* Resetting margin if .noteDate container handles it */
+    margin: 0 !important;
 }
 /* End of Overrides */
 
-/* Appended styles removed. Changes will be applied to original selectors. */
+/* Responsive adjustments for note cards */
+
+/* Default (Small screens < 768px): 1 column */
+/* .note flex-basis is already calc(100% - 2rem) from previous step */
+
+/* Medium screens (tablets, 768px and up) - 2 columns */
+@media (min-width: 768px) {
+    .note {
+        flex-basis: calc(50% - 2rem); /* 2rem accounts for 1rem margin left & right */
+    }
+}
+
+/* Large screens (desktops, 1024px and up) - 3 columns */
+@media (min-width: 1024px) {
+    .note {
+        flex-basis: calc(33.333% - 2rem); /* 2rem accounts for 1rem margin left & right */
+    }
+}
+
+/* Optional: Extra Large screens */
+@media (min-width: 1200px) {
+    .note {
+        max-width: 31rem; /* Cap growth to maintain original max size aesthetic */
+    }
+}
+
 /******************************************
 /* MENU STYLES
 /*******************************************/
