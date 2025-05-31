@@ -13,22 +13,26 @@
 ## 🛠️ Technologies Used
 
 ### Frontend
+
 - HTML
 - CSS
 - JavaScript
 - EJS (Embedded JavaScript Templates) – for server-side rendering
 
 ### Backend
+
 - Node.js – JavaScript runtime environment
 - Express.js – Web framework for Node.js
 - MongoDB – NoSQL database for storing journal entries and user data
 - Mongoose – ODM (Object Data Modeling) library for MongoDB and Node.js
 
 ### Authentication
+
 - Passport.js – Middleware for user authentication
 - bcrypt – Library for hashing passwords
 
 ### Deployment
+
 - Railway – Cloud deployment platform
 
 ---
@@ -49,6 +53,18 @@ Once I had my designs locked in, I coded the layouts in HTML & CSS and converted
 - Beautiful, responsive design optimized for accessibility
 - Built with an MVC architecture for scalability
 - Production deployment using Railway
+
+---
+
+## 🔧 Optimizations
+
+This was my first time using Figma to design a full app before writing any code—and it made a huge difference. Being able to interact with the UI beforehand helped me identify what would actually work and what needed rethinking. I also explored which design elements were practical to implement and which weren't, saving time in development.
+
+---
+
+## 📚 Lessons Learned
+
+This is the most ambitious project I’d built at the time utilizing MVC architecture. I learned a lot about implementing authentication, setting up multiple routes, and managing connections to and from a database. It really solidified my understanding of the MVC architecture and gave me hands-on experience building a system where users can create private entries securely.
 
 ---
 
@@ -75,18 +91,21 @@ squish-journal/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (v14 or higher)
 - MongoDB (local or Atlas)
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/artslimedev/squish-journal.git
    cd squish-journal
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
@@ -94,6 +113,7 @@ squish-journal/
 3. **Set up environment variables**
 
    Create a `.env` file in the root directory and add:
+
    ```env
    PORT=3000
    MONGODB_URI=your_mongodb_connection_string
@@ -101,23 +121,12 @@ squish-journal/
    ```
 
 4. **Start the development server**
+
    ```bash
    npm start
    ```
 
    Open your browser and go to: `http://localhost:3000`
-
----
-
-## 🔧 Optimizations
-
-This was my first time using Figma to design a full app before writing any code—and it made a huge difference. Being able to interact with the UI beforehand helped me identify what would actually work and what needed rethinking. I also explored which design elements were practical to implement and which weren't, saving time in development.
-
----
-
-## 📚 Lessons Learned
-
-This is the most ambitious project I’ve built so far. I learned a lot about implementing authentication, setting up multiple routes, and managing connections to and from a database. It really solidified my understanding of the MVC architecture and gave me hands-on experience building a system where users can create private entries securely.
 
 ---
 
