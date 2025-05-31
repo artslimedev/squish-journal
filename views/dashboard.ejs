@@ -142,8 +142,21 @@
                                     <a href="#"> <!-- Consider linking to a detail page: /entry/<%= entry._id %> -->
                                         <div class="noteTitle">
                                             <h3><%= entry.title %></h3>
-                                            <!-- Display mood icon based on entry.mood if desired -->
-                                            <span>Mood: <%= entry.mood %></span>
+                                            <span class="mood-icon-display">
+                                                <% if (entry.mood === 'happy') { %>
+                                                    <iconify-icon icon="fa6-regular:face-smile"></iconify-icon>
+                                                <% } else if (entry.mood === 'meh') { %>
+                                                    <iconify-icon icon="fa6-regular:face-meh"></iconify-icon>
+                                                <% } else if (entry.mood === 'annoyed') { %>
+                                                    <iconify-icon icon="fa6-regular:face-rolling-eyes"></iconify-icon>
+                                                <% } else if (entry.mood === 'angry') { %>
+                                                    <iconify-icon icon="fa6-regular:face-angry"></iconify-icon>
+                                                <% } else if (entry.mood === 'sad') { %>
+                                                    <iconify-icon icon="fa6-regular:face-frown"></iconify-icon>
+                                                <% } else { %>
+                                                    <%= entry.mood %> <!-- Fallback to text if mood is not recognized -->
+                                                <% } %>
+                                            </span>
                                         </div>
                                         <div class="noteText">
                                             <p><%= entry.entry %></p>
